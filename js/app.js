@@ -74,6 +74,10 @@
   var state = { genre: null, tpl: null };
 
   /* ─── DOM ─── */
+  var step1El = document.getElementById('step1');
+  var step2El = document.getElementById('step2');
+  var step3El = document.getElementById('step3');
+
   var templatesWrap    = document.getElementById('templates-wrap');
   var templatesHeading = document.getElementById('templates-heading');
   var templatesGrid    = document.getElementById('templates-grid');
@@ -107,6 +111,11 @@
 
       renderTemplates(state.genre);
       actionBar.hidden = true;
+
+      /* ステップ2をアクティブに */
+      step1El.classList.remove('active');
+      step2El.classList.add('active');
+      step3El.classList.remove('active');
     });
   });
 
@@ -164,6 +173,11 @@
     actionNumValue.textContent = num;
     actionBar.hidden = false;
     btnLine.href = LINE_URL.replace(/\/$/, '');
+
+    /* ステップ3をアクティブに */
+    step1El.classList.remove('active');
+    step2El.classList.remove('active');
+    step3El.classList.add('active');
 
     /* iframe をローディング状態にしてから src をセット */
     modalLoading.hidden = false;

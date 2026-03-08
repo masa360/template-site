@@ -3,108 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#faf7f2">
-  <title>LPテンプレートを選ぶ</title>
+  <meta name="theme-color" content="#F7F4F0">
+  <title>LP テンプレート選択</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <div class="page">
 
+    <!-- ヘッダー -->
     <header class="header">
-      <p class="header-eyebrow">LP Template</p>
-      <h1 class="header-title">ジャンルを選んでください</h1>
+      <span class="header-eyebrow">LP TEMPLATE</span>
+      <h1 class="header-title">テンプレートを選ぶ</h1>
+      <p class="header-sub">番号を LINE で送るとテンプレートが届きます</p>
     </header>
 
-    <!-- ① ジャンル選択 -->
-    <div class="genre-row">
-      <button class="genre-btn" data-genre="butuhan">
-        <span class="genre-icon">🛒</span>
-        <span class="genre-label">物販</span>
-      </button>
-      <button class="genre-btn" data-genre="biyou">
-        <span class="genre-icon">✨</span>
-        <span class="genre-label">美容</span>
-      </button>
-      <button class="genre-btn" data-genre="insyoku">
-        <span class="genre-icon">☕</span>
-        <span class="genre-label">飲食</span>
-      </button>
-      <button class="genre-btn" data-genre="school">
-        <span class="genre-icon">📚</span>
-        <span class="genre-label">スクール</span>
-      </button>
-      <button class="genre-btn" data-genre="taiken">
-        <span class="genre-icon">🎯</span>
-        <span class="genre-label">体験</span>
-      </button>
+    <!-- ステップインジケーター -->
+    <div class="steps">
+      <div class="step active" id="step1">
+        <span class="step-num">1</span>
+        <span class="step-label">ジャンル</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" id="step2">
+        <span class="step-num">2</span>
+        <span class="step-label">デザイン</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" id="step3">
+        <span class="step-num">3</span>
+        <span class="step-label">LINE 送信</span>
+      </div>
     </div>
+
+    <!-- ① ジャンル選択 -->
+    <section class="section" id="section-genre">
+      <p class="section-label">STEP 1 &nbsp;ジャンルを選んでください</p>
+      <div class="genre-row">
+        <button class="genre-btn" data-genre="butuhan">
+          <span class="genre-icon">🛒</span>
+          <span class="genre-label">物販</span>
+        </button>
+        <button class="genre-btn" data-genre="biyou">
+          <span class="genre-icon">✨</span>
+          <span class="genre-label">美容</span>
+        </button>
+        <button class="genre-btn" data-genre="insyoku">
+          <span class="genre-icon">☕</span>
+          <span class="genre-label">飲食</span>
+        </button>
+        <button class="genre-btn" data-genre="school">
+          <span class="genre-icon">📚</span>
+          <span class="genre-label">スクール</span>
+        </button>
+        <button class="genre-btn" data-genre="taiken">
+          <span class="genre-icon">🎯</span>
+          <span class="genre-label">体験</span>
+        </button>
+      </div>
+    </section>
 
     <!-- ② スケルトン一覧（ジャンル選択後に表示） -->
-    <div class="templates-wrap" id="templates-wrap" hidden>
-      <p class="templates-heading" id="templates-heading"></p>
-      <p class="templates-hint">タップするとサンプルが見れます</p>
+    <section class="section templates-wrap" id="templates-wrap" hidden>
+      <p class="section-label" id="templates-heading"></p>
+      <p class="templates-hint">タップするとサンプルを確認できます</p>
       <div class="templates-grid" id="templates-grid"></div>
-    </div>
+    </section>
 
-    <!-- アクションバー（ポップアップ外から再送信できるよう残す） -->
+    <!-- アクションバー（画面下固定） -->
     <div class="action-bar" id="action-bar" hidden>
       <div class="action-num">
         <span class="action-num-label">選択中</span>
         <span class="action-num-value" id="action-num-value">—</span>
       </div>
-      <button type="button" class="btn-preview-open" id="btn-preview-open">
-        <span>サンプルを見る</span>
-      </button>
+      <button type="button" class="btn-preview-open" id="btn-preview-open">サンプルを見る</button>
       <a class="btn-line" id="btn-line" href="#" target="_blank" rel="noopener noreferrer">
         <span class="btn-line-icon"></span>
-        <span>LINEで送る</span>
+        <span>LINE で送る</span>
       </a>
     </div>
 
   </div>
 
-  <!-- ポップアップモーダル（サンプルLPプレビュー） -->
-  <div class="modal" id="modal" hidden aria-modal="true" role="dialog" aria-label="サンプルLPプレビュー">
+  <!-- モーダル（ボトムシート） -->
+  <div class="modal" id="modal" hidden aria-modal="true" role="dialog" aria-label="サンプル LP プレビュー">
     <div class="modal-backdrop" id="modal-backdrop"></div>
     <div class="modal-sheet" id="modal-sheet">
 
-      <!-- モーダルヘッダー -->
+      <div class="modal-handle"></div>
+
       <div class="modal-header">
-        <div class="modal-drag-handle"></div>
         <div class="modal-header-info">
           <span class="modal-num" id="modal-num">No.1</span>
-          <span class="modal-name" id="modal-name">シンプル</span>
+          <span class="modal-name" id="modal-name"></span>
         </div>
         <button type="button" class="modal-close" id="modal-close" aria-label="閉じる">
           <span class="modal-close-icon"></span>
         </button>
       </div>
 
-      <!-- iframeプレビュー -->
       <div class="modal-body">
         <div class="modal-loading" id="modal-loading">
           <div class="loading-spinner"></div>
-          <p>読み込み中...</p>
+          <p>読み込み中…</p>
         </div>
         <iframe
           id="modal-iframe"
           class="modal-iframe"
           src="about:blank"
-          title="LPサンプルプレビュー"
+          title="LP サンプルプレビュー"
           scrolling="yes"
           loading="lazy"
         ></iframe>
       </div>
 
-      <!-- モーダルフッター：LINEボタン -->
       <div class="modal-footer">
+        <p class="modal-footer-note">この番号を LINE で送ると案内が届きます</p>
         <a class="btn-line-modal" id="btn-line-modal" href="#" target="_blank" rel="noopener noreferrer">
           <span class="btn-line-icon"></span>
-          <span id="btn-line-modal-text">この番号をLINEで送る</span>
+          <span id="btn-line-modal-text">LINE で送る</span>
         </a>
       </div>
 
