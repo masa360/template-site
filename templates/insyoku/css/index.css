@@ -1,0 +1,966 @@
+@charset "UTF-8";
+
+/* ======================================================
+   ローディングアニメーション（3点バウンス）
+====================================================== */
+@-webkit-keyframes l3 {
+  20%  { background-position: 0% 0%,   50% 50%,  100% 50%; }
+  40%  { background-position: 0% 100%, 50% 0%,   100% 50%; }
+  60%  { background-position: 0% 50%,  50% 100%, 100% 0%;  }
+  80%  { background-position: 0% 50%,  50% 50%,  100% 100%; }
+}
+@keyframes l3 {
+  20%  { background-position: 0% 0%,   50% 50%,  100% 50%; }
+  40%  { background-position: 0% 100%, 50% 0%,   100% 50%; }
+  60%  { background-position: 0% 50%,  50% 100%, 100% 0%;  }
+  80%  { background-position: 0% 50%,  50% 50%,  100% 100%; }
+}
+
+.loading {
+  -webkit-transition: opacity 0.25s;
+  transition: opacity 0.25s;
+  position: absolute;
+  width: 40px;
+  top: calc(50vh - 20px);
+  left: calc(50% - 20px);
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side, #000 90%, #0000);
+  background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
+  background-size: 33.3333333333% 50%;
+  -webkit-animation: l3 1s infinite linear;
+  animation: l3 1s infinite linear;
+}
+@media screen and (max-width: 480px) {
+  .loading {
+    width: 30px;
+    top: calc(50vh - 15px);
+    left: calc(50% - 15px);
+  }
+}
+
+/* ======================================================
+   ヒーローセクション (.p_mv)
+====================================================== */
+.p_mv {
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  padding-bottom: 138px;
+  position: relative;
+}
+@media screen and (max-width: 480px) {
+  .p_mv { padding-bottom: 135px; }
+}
+
+/* タイトル（縦書きSVG） */
+.p_mv .ttl {
+  position: relative;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  transform: translateY(20px);
+  -webkit-transition: opacity 1s 0.5s, -webkit-transform 1s 0.5s;
+  transition: opacity 1s 0.5s, -webkit-transform 1s 0.5s;
+  transition: opacity 1s 0.5s, transform 1s 0.5s;
+  transition: opacity 1s 0.5s, transform 1s 0.5s, -webkit-transform 1s 0.5s;
+  z-index: 1;
+}
+@media screen and (max-width: 480px) {
+  .p_mv .ttl svg { width: 216px; height: auto; }
+}
+
+/* 回転サークルバッジ */
+.p_mv .copy {
+  position: absolute;
+  z-index: 2;
+  top: 219px;
+  left: calc(50% + 172px);
+  width: 300px;
+  opacity: 0;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition: opacity 0.5s 0.5s, -webkit-transform 0.5s 0.5s;
+  transition: opacity 0.5s 0.5s, -webkit-transform 0.5s 0.5s;
+  transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
+  transition: opacity 0.5s 0.5s, transform 0.5s 0.5s, -webkit-transform 0.5s 0.5s;
+}
+@media screen and (max-width: 480px) {
+  .p_mv .copy {
+    width: 150px;
+    top: 111px;
+    left: calc(50% + 28px);
+  }
+  .p_mv .copy svg { width: 100%; height: auto; }
+}
+
+/* 回転テキスト（.copy-rotateをSVG g要素へアニメーション適用） */
+.p_mv .copy .copy-rotate {
+  -webkit-transform-origin: 150px 150px;
+  transform-origin: 150px 150px;
+  -webkit-animation: 50s linear infinite load;
+  animation: 50s linear infinite load;
+  opacity: 0;
+  -webkit-transition: opacity 1s 1s;
+  transition: opacity 1s 1s;
+}
+
+/* メイン写真（五角形クリップパス） */
+.p_mv .img1 {
+  width: 480px;
+  margin: -20px auto 0;
+  position: relative;
+  z-index: 1;
+}
+/* 五角形の点描シャドウ */
+.p_mv .img1::before {
+  content: "";
+  display: block;
+  position: absolute;
+  -webkit-clip-path: polygon(50% 0, 100% 36%, 92% 100%, 7.2% 100%, 0 38%);
+  clip-path: polygon(50% 0, 100% 36%, 92% 100%, 7.2% 100%, 0 38%);
+  width: 100%;
+  height: 100%;
+  bottom: -10px;
+  right: -20px;
+  -webkit-transform: rotate(-5.5deg);
+  transform: rotate(-5.5deg);
+  background-image: radial-gradient(circle, #000 25%, transparent 25%);
+  background-size: 4px 4px;
+  pointer-events: none;
+}
+@media screen and (max-width: 480px) {
+  .p_mv .img1::before {
+    background-size: 2px 2px;
+    bottom: -4px;
+    right: -8px;
+  }
+}
+/* 実際の写真 or プレースホルダーに五角形を適用 */
+.p_mv .img1 img,
+.p_mv .img1 .photo-placeholder {
+  width: 100%;
+  height: auto;
+  -webkit-clip-path: polygon(50% 0, 100% 36%, 92% 100%, 7.2% 100%, 0 38%);
+  clip-path: polygon(50% 0, 100% 36%, 92% 100%, 7.2% 100%, 0 38%);
+}
+.p_mv .img1 .photo-placeholder { aspect-ratio: 480 / 550; }
+@media screen and (max-width: 480px) {
+  .p_mv .img1 { width: 192px; margin: 85px auto 0; }
+}
+
+/* サービス写真（左側へはみ出す） */
+.p_mv .service {
+  position: absolute;
+  top: 116px;
+  right: calc(50% + 234px);
+}
+@media screen and (max-width: 480px) {
+  .p_mv .service { top: 104px; right: calc(50% + 79px); }
+  .p_mv .service img,
+  .p_mv .service .photo-placeholder { width: 116px; height: auto; }
+}
+/* アロー装飾（スクロールでクリップパスアニメーション） */
+.p_mv .service::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 2;
+  aspect-ratio: 566 / 482;
+  width: 283px;
+  bottom: -232px;
+  right: -87px;
+  background: url("../img/top_mv_arr1.png") no-repeat 0 0 / contain;
+  opacity: 0;
+  -webkit-clip-path: inset(0 100% 0 0);
+  clip-path: inset(0 100% 0 0);
+  -webkit-transition: opacity 0.5s, -webkit-clip-path 0.5s;
+  transition: opacity 0.5s, -webkit-clip-path 0.5s;
+  transition: opacity 0.5s, clip-path 0.5s;
+  transition: opacity 0.5s, clip-path 0.5s, -webkit-clip-path 0.5s;
+}
+@media screen and (max-width: 480px) {
+  .p_mv .service::after { width: 98px; bottom: -12px; right: -46px; -webkit-transform: rotate(8.7deg); transform: rotate(8.7deg); }
+}
+.p_mv .service.done::after {
+  opacity: 1;
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+
+/* マップ写真（右側へはみ出す） */
+.p_mv .map {
+  position: absolute;
+  bottom: -95px;
+  left: calc(50% + 249px);
+}
+@media screen and (max-width: 480px) {
+  .p_mv .map { bottom: -17px; left: calc(50% + 10px); }
+  .p_mv .map img,
+  .p_mv .map .photo-placeholder { width: 292px; height: auto; }
+}
+.p_mv .map::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 2;
+  aspect-ratio: 208 / 156;
+  width: 104px;
+  top: 83px;
+  left: 56px;
+  background: url("../img/top_mv_arr2.png") no-repeat 0 0 / contain;
+  opacity: 0;
+  -webkit-clip-path: inset(0 0 0 100%);
+  clip-path: inset(0 0 0 100%);
+  -webkit-transition: opacity 0.5s, -webkit-clip-path 0.5s;
+  transition: opacity 0.5s, -webkit-clip-path 0.5s;
+  transition: opacity 0.5s, clip-path 0.5s;
+  transition: opacity 0.5s, clip-path 0.5s, -webkit-clip-path 0.5s;
+}
+@media screen and (max-width: 480px) {
+  .p_mv .map::after { width: 43px; top: 4px; left: 100px; }
+}
+.p_mv .map.done::after {
+  opacity: 1;
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+
+/* 装飾写真2・3 */
+.p_mv .img2 {
+  position: absolute;
+  top: 408px;
+  left: calc(50% + 422px);
+}
+@media screen and (max-width: 480px) {
+  .p_mv .img2 { top: 265px; left: calc(50% + 102px); width: 99px; height: auto; }
+}
+.p_mv .img3 {
+  position: absolute;
+  bottom: -9px;
+  left: calc(50% - 586px);
+}
+@media screen and (max-width: 480px) {
+  .p_mv .img3 { bottom: 12px; left: calc(50% - 164px); width: 115px; height: auto; }
+}
+
+/* ======================================================
+   ロード完了時のアニメーション発火（body.loaded）
+====================================================== */
+body.loaded .loading { opacity: 0; }
+body.loaded .p_mv    { opacity: 1; }
+body.loaded .p_mv .ttl {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+body.loaded .p_mv .copy {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+body.loaded .p_mv .copy .copy-rotate { opacity: 1; }
+
+/* ======================================================
+   イントロセクション (.p_intro)
+====================================================== */
+.p_intro { padding: 0 0 40px; }
+@media screen and (max-width: 480px) {
+  .p_intro { padding: 0 0 120px; }
+}
+
+/* ボイスバブルリスト */
+.p_intro .voice_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  width: 86.7%;
+  margin: 0 auto;
+  text-align: left;
+  position: relative;
+}
+/* 大きな点描五角形の装飾 */
+.p_intro .voice_list::before {
+  content: "";
+  display: block;
+  position: absolute;
+  -webkit-clip-path: polygon(50.8% 0, 100% 36.5%, 91.1% 100%, 12% 98.7%, 0 37.3%);
+  clip-path: polygon(50.8% 0, 100% 36.5%, 91.1% 100%, 12% 98.7%, 0 37.3%);
+  top: 244px;
+  left: calc(50% + 452px);
+  width: 412px;
+  aspect-ratio: 832 / 954;
+  background-image: radial-gradient(circle, #000 25%, transparent 25%);
+  background-size: 4px 4px;
+}
+@media screen and (max-width: 480px) {
+  .p_intro .voice_list::before {
+    top: 198px;
+    left: calc(50% + 91px);
+    width: 137px;
+    background-size: 2px 2px;
+  }
+}
+
+/* ボイスバブル個別アニメーション */
+.p_intro .voice_list img,
+.p_intro .voice_list svg {
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  transform: translateY(20px);
+  -webkit-transition: opacity 1s 0.5s, -webkit-transform 1s 0.5s;
+  transition: opacity 1s 0.5s, -webkit-transform 1s 0.5s;
+  transition: opacity 1s 0.5s, transform 1s 0.5s;
+  transition: opacity 1s 0.5s, transform 1s 0.5s, -webkit-transform 1s 0.5s;
+  height: auto;
+}
+.p_intro .voice_list.done img,
+.p_intro .voice_list.done svg {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+/* 各バブルの遅延 */
+.p_intro .voice_list li:nth-child(1) svg { -webkit-transition: opacity 1s 0s, -webkit-transform 1s 0s; transition: opacity 1s 0s, transform 1s 0s; }
+.p_intro .voice_list li:nth-child(2) svg { -webkit-transition: opacity 1s 1s, -webkit-transform 1s 1s; transition: opacity 1s 1s, transform 1s 1s; }
+.p_intro .voice_list li:nth-child(3) svg { -webkit-transition: opacity 1s 2s, -webkit-transform 1s 2s; transition: opacity 1s 2s, transform 1s 2s; }
+.p_intro .voice_list li:nth-child(4) svg { -webkit-transition: opacity 1s 3s, -webkit-transform 1s 3s; transition: opacity 1s 3s, transform 1s 3s; }
+.p_intro .voice_list li:nth-child(5) svg { -webkit-transition: opacity 1s 4s, -webkit-transform 1s 4s; transition: opacity 1s 4s, transform 1s 4s; }
+
+/* ボイスバブル配置（散らばりレイアウト） */
+.p_intro .voice_list li:nth-child(1) { margin-left: calc(50% + 148px); }
+@media screen and (max-width: 480px) {
+  .p_intro .voice_list li:nth-child(1) { margin-left: calc(50% + 16px); }
+  .p_intro .voice_list li:nth-child(1) svg { width: 69px; }
+}
+.p_intro .voice_list li:nth-child(2) {
+  margin-top: -15px;
+  margin-left: calc(50% - 272px);
+  position: relative;
+}
+/* 写真装飾 (::before に写真が入る) */
+.p_intro .voice_list li:nth-child(2)::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -214px;
+  top: 224px;
+  aspect-ratio: 246 / 132;
+  width: 123px;
+  background: url("../img/top_intro_img2.jpg") no-repeat 0 0 / contain;
+  opacity: 0;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+}
+@media screen and (max-width: 480px) {
+  .p_intro .voice_list li:nth-child(2) { margin-top: -32px; margin-left: calc(50% - 75px); }
+  .p_intro .voice_list li:nth-child(2) svg { width: 43px; }
+  .p_intro .voice_list li:nth-child(2)::before { left: -88px; top: 123px; width: 53px; }
+}
+.p_intro .voice_list li:nth-child(3) {
+  margin-top: -128px;
+  margin-left: calc(50% - 60px);
+  position: relative;
+}
+.p_intro .voice_list li:nth-child(3)::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 219px;
+  top: 35px;
+  aspect-ratio: 170 / 154;
+  width: 85px;
+  background: url("../img/top_intro_img1.jpg") no-repeat 0 0 / contain;
+  opacity: 0;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+}
+@media screen and (max-width: 480px) {
+  .p_intro .voice_list li:nth-child(3) { margin-top: -44px; margin-left: calc(50% + 60px); }
+  .p_intro .voice_list li:nth-child(3) svg { width: 71.4px; }
+  .p_intro .voice_list li:nth-child(3)::before { left: 46px; top: -61px; width: 37px; }
+}
+.p_intro .voice_list.done li:nth-child(2)::before,
+.p_intro .voice_list.done li:nth-child(3)::before {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.p_intro .voice_list li:nth-child(4) {
+  margin-top: -26px;
+  margin-left: calc(50% + 246px);
+}
+@media screen and (max-width: 480px) {
+  .p_intro .voice_list li:nth-child(4) { margin-top: -63px; margin-left: calc(50% - 125px); }
+  .p_intro .voice_list li:nth-child(4) svg { width: 69px; }
+}
+.p_intro .voice_list li:nth-child(5) {
+  margin-top: 65px;
+  margin-left: calc(50% + 27px);
+}
+@media screen and (max-width: 480px) {
+  .p_intro .voice_list li:nth-child(5) { margin-top: -1px; margin-left: calc(50% - 14px); }
+  .p_intro .voice_list li:nth-child(5) svg { width: 70px; }
+}
+
+/* テキストブロック */
+.p_intro .txt {
+  margin-top: 85px;
+  margin-left: calc(50% - 240px);
+  text-align: left;
+  position: relative;
+}
+@media screen and (max-width: 480px) {
+  .p_intro .txt { margin: 144px auto 0; width: 270px; }
+}
+/* "Would you like to come?" クリップパスアニメーション */
+.p_intro .txt .en {
+  position: absolute;
+  top: -285px;
+  left: -185px;
+  opacity: 0;
+  -webkit-clip-path: inset(0 100% 0 0);
+  clip-path: inset(0 100% 0 0);
+  -webkit-transition: opacity 1s, -webkit-clip-path 1s;
+  transition: opacity 1s, -webkit-clip-path 1s;
+  transition: opacity 1s, clip-path 1s;
+  transition: opacity 1s, clip-path 1s, -webkit-clip-path 1s;
+}
+.p_intro .txt .en.done {
+  opacity: 1;
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+@media screen and (max-width: 480px) {
+  .p_intro .txt .en { width: 172px; height: auto; top: -130px; left: calc(50% - 154px); }
+}
+.p_intro .txt p {
+  font-size: 1.8rem;
+  line-height: 2.22;
+}
+.p_intro .txt p + p { margin-top: 2.22em; }
+@media screen and (max-width: 480px) {
+  .p_intro .txt p { font-size: 1.5rem; }
+}
+/* 装飾写真 */
+.p_intro .txt .img1 {
+  position: absolute;
+  top: 20px;
+  left: 480px;
+}
+@media screen and (max-width: 480px) {
+  .p_intro .txt .img1 { width: 106px; height: auto; top: -125px; left: calc(50% + 52px); }
+}
+.p_intro .txt .img2 {
+  position: absolute;
+  bottom: -70px;
+  left: -478px;
+}
+@media screen and (max-width: 480px) {
+  .p_intro .txt .img2 { width: 124px; height: auto; bottom: -125px; left: calc(50% - 159px); }
+}
+
+/* ======================================================
+   ABOUTセクション (.s_about)
+====================================================== */
+.s_about {
+  padding-top: 365px;
+  position: relative;
+}
+@media screen and (max-width: 480px) {
+  .s_about { padding-top: 190px; }
+}
+.s_about .s_ttl {
+  width: 740px;
+  margin: 0 auto;
+  text-align: left;
+}
+.s_about .s_ttl .en {
+  position: absolute;
+  top: 0;
+  left: calc(50% + 90px);
+}
+.s_about .s_ttl .en::after {
+  content: "";
+  display: block;
+  aspect-ratio: 476 / 156;
+  width: 238px;
+  background: url("../img/top_about_line1.png") no-repeat 0 0 / contain;
+  position: absolute;
+  left: -260px;
+  bottom: -78px;
+}
+.s_about .s_ttl .ja { position: relative; }
+.s_about .s_ttl .ja .bal {
+  position: absolute;
+  top: -90px;
+  left: 171px;
+}
+@media screen and (max-width: 480px) {
+  .s_about .s_ttl { width: 270px; }
+  .s_about .s_ttl .ja svg:not(.bal) { width: 164px; height: auto; }
+  .s_about .s_ttl .ja .bal { top: -62px; left: 81px; width: 80px; height: auto; }
+  .s_about .s_ttl .en { left: calc(50% - 10px); }
+  .s_about .s_ttl .en svg { width: 167px; height: auto; }
+  .s_about .s_ttl .en::after { display: none; }
+}
+.s_about .s_lead {
+  text-align: left;
+  font-size: 1.8rem;
+  line-height: 2.22;
+  margin-left: calc(50% + 110px);
+  margin-top: -0.61em;
+}
+@media screen and (max-width: 480px) {
+  .s_about .s_lead { margin-left: calc(50% - 135px); margin-top: 18px; font-size: 1.4rem; line-height: 2.14; }
+}
+.s_about .mark {
+  position: absolute;
+  left: calc(50% + 110px);
+  top: 372px;
+}
+@media screen and (max-width: 480px) {
+  .s_about .mark { width: 95px; height: auto; left: calc(50% + 63px); top: 125px; }
+}
+.s_about .about_list {
+  width: 900px;
+  margin: 230px auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  text-align: left;
+}
+@media screen and (max-width: 480px) {
+  .s_about .about_list { width: 80%; margin: 32px auto 0; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column; flex-flow: column; }
+}
+.s_about .about_list li { position: relative; }
+.s_about .about_list li:nth-child(1) { width: 450px; margin-right: auto; }
+.s_about .about_list li:nth-child(1) .img { top: -280px; left: -54px; }
+.s_about .about_list li:nth-child(1)::after {
+  content: "";
+  display: block;
+  aspect-ratio: 322 / 110;
+  width: 161px;
+  background: url("../img/top_about_line2.png") no-repeat 0 0 / contain;
+  position: absolute;
+  left: 394px;
+  top: -62px;
+}
+@media screen and (max-width: 480px) {
+  .s_about .about_list li:nth-child(1) { width: auto; margin-right: 0; }
+  .s_about .about_list li:nth-child(1) .img { width: 183px; position: relative; top: 0; left: 0; margin-left: -7px; }
+  .s_about .about_list li:nth-child(1) .ttl { margin-top: 18px; }
+  .s_about .about_list li:nth-child(1) .ttl svg { width: 212px; height: auto; }
+  .s_about .about_list li:nth-child(1)::after { display: none; }
+}
+.s_about .about_list li:nth-child(2) { width: 305px; margin: 175px -30px 0 auto; }
+.s_about .about_list li:nth-child(2) .img { top: -289px; left: -20px; }
+.s_about .about_list li:nth-child(2)::after {
+  content: "";
+  display: block;
+  aspect-ratio: 334 / 166;
+  width: 167px;
+  background: url("../img/top_about_line3.png") no-repeat 0 0 / contain;
+  position: absolute;
+  left: -250px;
+  top: 128px;
+}
+@media screen and (max-width: 480px) {
+  .s_about .about_list li:nth-child(2) { width: auto; margin: 90px 0 0 calc(50% - 70px); }
+  .s_about .about_list li:nth-child(2) .img { width: 191px; position: relative; top: 0; left: 0; margin-left: -15px; }
+  .s_about .about_list li:nth-child(2) .ttl { margin: 18px 0 0; }
+  .s_about .about_list li:nth-child(2) .ttl svg { width: 172px; height: auto; }
+  .s_about .about_list li:nth-child(2)::after { display: none; }
+}
+.s_about .about_list li:nth-child(3) { width: 400px; margin: 15px 0 0 268px; }
+.s_about .about_list li:nth-child(3) .img { top: -70px; left: -324px; }
+.s_about .about_list li:nth-child(3)::after {
+  content: "";
+  display: block;
+  aspect-ratio: 396 / 308;
+  width: 198px;
+  background: url("../img/top_about_line4.png") no-repeat 0 0 / contain;
+  position: absolute;
+  left: 30px;
+  bottom: -200px;
+}
+@media screen and (max-width: 480px) {
+  .s_about .about_list li:nth-child(3) { width: auto; margin: 95px 0 0 calc(50% - 134px); }
+  .s_about .about_list li:nth-child(3) .img { width: 133px; top: -12px; left: -33px; }
+  .s_about .about_list li:nth-child(3) .ttl { padding-left: 124px; }
+  .s_about .about_list li:nth-child(3) .ttl svg { width: 159px; height: auto; }
+  .s_about .about_list li:nth-child(3)::after { display: none; }
+}
+.s_about .about_list .img { position: absolute; }
+@media screen and (max-width: 480px) {
+  .s_about .about_list .img { height: auto; }
+}
+.s_about .about_list p {
+  margin-top: 25px;
+  font-size: 1.8rem;
+  line-height: 2.22;
+}
+@media screen and (max-width: 480px) {
+  .s_about .about_list p { margin-top: 15px; font-size: 1.4rem; line-height: 2.14; }
+}
+
+/* ======================================================
+   利用ガイドセクション (.s_guide)
+====================================================== */
+.s_guide {
+  position: relative;
+  padding-top: 250px;
+}
+@media screen and (max-width: 480px) {
+  .s_guide { padding-top: 105px; }
+}
+/* 大きな点描五角形の装飾 */
+.s_guide::before {
+  content: "";
+  display: block;
+  position: absolute;
+  -webkit-clip-path: polygon(50.8% 0, 100% 36.5%, 91.1% 100%, 12% 98.7%, 0 37.3%);
+  clip-path: polygon(50.8% 0, 100% 36.5%, 91.1% 100%, 12% 98.7%, 0 37.3%);
+  top: 213px;
+  left: calc(50% - 720px);
+  width: 832px;
+  aspect-ratio: 832 / 954;
+  background-image: radial-gradient(circle, #000 25%, transparent 25%);
+  background-size: 4px 4px;
+}
+@media screen and (max-width: 480px) {
+  .s_guide::before { top: 140px; left: calc(50% - 238px); width: 263px; background-size: 2px 2px; }
+}
+.s_guide .s_ttl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 700px;
+  margin: 0 auto;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  position: relative;
+}
+.s_guide .s_ttl .en {
+  position: absolute;
+  right: 290px;
+  bottom: 100px;
+}
+@media screen and (max-width: 480px) {
+  .s_guide .s_ttl { width: 240px; }
+  .s_guide .s_ttl .ja svg { width: 112px; height: auto; }
+  .s_guide .s_ttl .en { right: 154px; bottom: 49px; }
+  .s_guide .s_ttl .en svg { width: 99px; height: auto; }
+}
+.s_guide .img1 {
+  position: absolute;
+  top: 51px;
+  left: calc(50% + 322px);
+}
+@media screen and (max-width: 480px) {
+  .s_guide .img1 { top: 38px; left: calc(50% + 94px); width: 54px; height: auto; }
+}
+.s_guide .img2 {
+  position: absolute;
+  top: 360px;
+  left: calc(50% - 612px);
+}
+@media screen and (max-width: 480px) {
+  .s_guide .img2 { display: none; }
+}
+.s_guide .guide {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 900px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 480px) {
+  .s_guide .guide { width: 100%; margin-top: 25px; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column; flex-flow: column; }
+  .s_guide .guide .photo-placeholder { width: 334px; height: auto; }
+}
+.s_guide .service { position: relative; }
+.s_guide .service .ttl {
+  max-width: 1130px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: left;
+}
+@media screen and (max-width: 480px) {
+  .s_guide .service .ttl { text-align: center; margin: 25px auto 0; }
+  .s_guide .service .ttl svg { width: 176px; height: auto; }
+}
+
+/* サービス一覧グリッド */
+.s_guide .service_list {
+  margin: 98px auto 0;
+  width: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  gap: 70px 0;
+  position: relative;
+}
+@media screen and (max-width: 480px) {
+  .s_guide .service_list {
+    margin: 80px auto 0;
+    width: 92%;
+    max-width: 345px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 25px 0;
+  }
+}
+/* サービスリスト装飾矢印 */
+.s_guide .service_list::before {
+  content: "";
+  display: block;
+  aspect-ratio: 118 / 222;
+  width: 59px;
+  background: url("../img/top_service_arr.png") no-repeat 0 0 / contain;
+  position: absolute;
+  left: -24px;
+  top: -98px;
+}
+@media screen and (max-width: 480px) {
+  .s_guide .service_list::before { display: none; }
+}
+.s_guide .service_list li {
+  width: 200px;
+  font-family: 'Kosugi Maru', "秀英丸ゴシック B", "DNPShueiMGoStd-B", sans-serif;
+  font-size: 1.6rem;
+}
+@media screen and (max-width: 480px) {
+  .s_guide .service_list li { width: 22.7vw; max-width: 85px; font-size: 1.2rem; line-height: 1.5; }
+}
+/* サービスアイコン（::beforeで画像表示） */
+.s_guide .service_list li::before {
+  content: "";
+  display: block;
+  aspect-ratio: 220 / 160;
+  margin: 0 auto 12px;
+  width: 110px;
+  background: #f4f4f4;
+  border-radius: 8px;
+}
+@media screen and (max-width: 480px) {
+  .s_guide .service_list li::before { width: 60px; margin: 0 auto 4px; }
+}
+.s_guide .service_list li:nth-child(1)::before { background: #f4f4f4 url("../img/top_service1.png") no-repeat center / 60%; }
+.s_guide .service_list li:nth-child(2)::before { background: #f4f4f4 url("../img/top_service2.png") no-repeat center / 60%; }
+.s_guide .service_list li:nth-child(3)::before { background: #f4f4f4 url("../img/top_service3.png") no-repeat center / 60%; }
+.s_guide .service_list li:nth-child(4)::before { background: #f4f4f4 url("../img/top_service4.png") no-repeat center / 60%; }
+.s_guide .service_list li:nth-child(5)::before { background: #f4f4f4 url("../img/top_service5.png") no-repeat center / 60%; }
+.s_guide .service_list li:nth-child(6)::before { background: #f4f4f4 url("../img/top_service6.png") no-repeat center / 60%; }
+.s_guide .service_list li:nth-child(7)::before { background: #f4f4f4 url("../img/top_service7.png") no-repeat center / 60%; }
+.s_guide .service_list li:nth-child(8)::before { background: #f4f4f4 url("../img/top_service8.png") no-repeat center / 60%; }
+
+/* チェックリスト */
+.s_guide .check_list {
+  width: 760px;
+  margin: 60px auto 0;
+  border-top: 1.5px solid #000;
+}
+@media screen and (max-width: 480px) {
+  .s_guide .check_list { width: 86.7%; margin: 25px auto 0; }
+}
+.s_guide .check_list li {
+  padding: 35px 60px 35px 100px;
+  border-bottom: 1.5px solid #000;
+  position: relative;
+  text-align: left;
+  font-family: 'Kosugi Maru', "秀英丸ゴシック B", "DNPShueiMGoStd-B", sans-serif;
+  font-size: 2rem;
+}
+@media screen and (max-width: 480px) {
+  .s_guide .check_list li { padding: 20px 25px; font-size: 1.6rem; line-height: 1.56; }
+}
+.s_guide .check_list li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  aspect-ratio: 48 / 32;
+  width: 24px;
+  top: calc(35px + 0.5em - 8px);
+  left: 60px;
+  background: url("../img/i_check.svg") no-repeat center / contain;
+}
+@media screen and (max-width: 480px) {
+  .s_guide .check_list li::before { width: 16px; top: calc(20px + 0.78em - 5px); left: 0; }
+}
+.s_guide .check_list li .notes {
+  display: block;
+  margin-top: 1em;
+  font-family: 'Kosugi Maru', "秀英丸ゴシック L", "DNPShueiMGoStd-L", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.67;
+}
+@media screen and (max-width: 480px) {
+  .s_guide .check_list li .notes { margin: 1em -25px 0; font-size: 1rem; line-height: 1.6; }
+}
+.s_guide .btn { margin-top: 60px; }
+@media screen and (max-width: 480px) {
+  .s_guide .btn { margin-top: 25px; }
+}
+
+/* ======================================================
+   Instagramセクション (.s_instagram)
+====================================================== */
+.s_instagram {
+  padding: 70px 0 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 770px;
+}
+@media screen and (max-width: 480px) {
+  .s_instagram { padding: 42px 0 0; min-height: 425px; }
+}
+/* 斜め点描背景 */
+.s_instagram::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 84px;
+  bottom: -120px;
+  left: calc(50% - 710px);
+  right: calc(50% - 780px);
+  -webkit-clip-path: polygon(180px 0, calc(100% - 95px) 44px, 100% calc(100% - 160px), 0 100%);
+  clip-path: polygon(180px 0, calc(100% - 95px) 44px, 100% calc(100% - 160px), 0 100%);
+  background-image: radial-gradient(circle, #000 25%, transparent 25%);
+  background-size: 4px 4px;
+}
+@media screen and (max-width: 480px) {
+  .s_instagram::before {
+    top: 60px; bottom: -35px;
+    left: -10px; right: -35px;
+    -webkit-clip-path: polygon(calc(16.5% + 10px) 0, 100% 5.9vw, 100% calc(100% - 18.4vw), 0 100%);
+    clip-path: polygon(calc(16.5% + 10px) 0, 100% 5.9vw, 100% calc(100% - 18.4vw), 0 100%);
+    background-size: 2px 2px;
+  }
+}
+.s_instagram .s_ttl {
+  width: 1050px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  position: relative;
+}
+@media screen and (max-width: 480px) {
+  .s_instagram .s_ttl { width: auto; display: block; }
+  .s_instagram .s_ttl svg { width: 230px; height: auto; margin-left: calc(50% - 94px); }
+}
+/* フィードグリッド */
+.s_instagram .timeline {
+  position: relative;
+  width: 80%;
+  max-width: 1028px;
+  margin: 100px auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  gap: 25px;
+}
+@media screen and (max-width: 480px) {
+  .s_instagram .timeline { margin: 33px auto 0; gap: 15px; }
+}
+.s_instagram .timeline li {
+  width: calc((100% - 125px) / 6);
+  max-width: 150px;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+@media screen and (max-width: 480px) {
+  .s_instagram .timeline li { width: calc((100% - 30px) / 3); }
+  .s_instagram .timeline li:nth-child(n+10) { display: none; }
+}
+.s_instagram .timeline a {
+  display: block;
+  text-decoration: none;
+  background: #000;
+}
+@media (any-hover: hover) {
+  .s_instagram .timeline a:hover img,
+  .s_instagram .timeline a:hover .photo-placeholder { opacity: 0.7; -webkit-transform: scale(1.05); transform: scale(1.05); }
+}
+.s_instagram .timeline img,
+.s_instagram .timeline .photo-placeholder {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+}
+/* Instagram プレースホルダー調整 */
+.s_instagram .timeline .photo-placeholder::after { font-size: 0.8rem; }
+
+/* ======================================================
+   マップセクション (.s_map)
+====================================================== */
+.s_map {
+  padding: 165px 0 160px;
+}
+@media screen and (max-width: 480px) {
+  .s_map { padding: 80px 0 60px; }
+}
+.s_map .s_ttl {
+  width: 560px;
+  margin: 0 auto;
+  text-align: left;
+}
+@media screen and (max-width: 480px) {
+  .s_map .s_ttl { width: auto; text-align: center; }
+}
+.s_map .s_ttl .en {
+  display: block;
+  padding-left: 35px;
+}
+@media screen and (max-width: 480px) {
+  .s_map .s_ttl .en { padding-left: 0; }
+  .s_map .s_ttl .en svg { width: 280px; height: auto; }
+}
+.s_map .s_lead {
+  margin-top: 50px;
+  font-size: 1.8rem;
+  line-height: 2.22;
+}
+@media screen and (max-width: 480px) {
+  .s_map .s_lead { margin-top: 25px; font-size: 1.5rem; }
+}
+.s_map address {
+  margin-top: 20px;
+  font-size: 1.6rem;
+  line-height: 2;
+}
+@media screen and (max-width: 480px) {
+  .s_map address { font-size: 1.3rem; }
+}
+.s_map .map-wrap {
+  width: 80%;
+  max-width: 900px;
+  margin: 60px auto;
+  border: 1.5px solid #000;
+}
+@media screen and (max-width: 480px) {
+  .s_map .map-wrap { width: 90%; margin: 30px auto; }
+}
+.s_map .map-wrap iframe { display: block; }
+.s_map .btn { margin-top: 0; }

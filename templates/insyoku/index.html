@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>YOU CAFE - ゆうカフェ | 中学校を卒業した15才〜24才の女の子のためのカフェ</title>
+<meta name="description" content="ゆうカフェは、女の子が安心してすごせる居場所をつくるために、公益財団法人プラン・インターナショナル・ジャパンが運営しています。">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@Youcafe_jp">
+<meta property="og:title" content="YOU CAFE - ゆうカフェ">
+<meta property="og:url" content="https://www.youcafe.jp/">
+<link rel="canonical" href="https://www.youcafe.jp/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Kosugi+Maru&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/index.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/script.js"></script>
+</head>
+<body>
+<div class="p_wrap">
+
+<!-- ======== ヘッダー ======== -->
+<header>
+  <h1 class="logo">
+    <a href="/"><img src="img/logo_youcafe.svg" width="150" height="130" alt="YOU CAFE（ゆうカフェ）"></a>
+  </h1>
+  <nav>
+    <div class="inr">
+      <ul class="glo_nav">
+        <li><a href="/">TOPページ</a></li>
+        <li><a href="/guide/">利用ガイド・予約</a></li>
+        <li><a href="/access/">アクセス</a></li>
+        <li><a href="/form/inquiry/" target="_blank">お問い合わせ</a></li>
+      </ul>
+      <ul class="sns_list">
+        <li><a href="https://www.instagram.com/youcafe.jp" target="_blank"><img src="img/i_insta.svg" width="28" height="28" alt="Instagram"></a></li>
+        <li><a href="https://x.com/youcafe_jp" target="_blank"><img src="img/i_x.svg" width="28" height="28" alt="X"></a></li>
+      </ul>
+    </div>
+  </nav>
+  <a href="#" id="ham"><span class="line"></span></a>
+</header>
+
+<!-- ローディングアニメーション -->
+<div class="loading"></div>
+
+<!-- ======== ヒーローセクション ======== -->
+<div class="p_mv">
+
+  <!-- メインタイトル（縦書きSVG） -->
+  <h2 class="ttl">
+    <svg viewBox="0 0 475 413" width="475" height="413" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ここは、下北沢の住宅街にあるかくれがのような居場所">
+      <style>
+        .mv-ttl { font-family: 'Kosugi Maru', 'Hiragino Kaku Gothic ProN', sans-serif; fill: #000; }
+      </style>
+      <text class="mv-ttl" font-size="40" style="writing-mode:vertical-rl" x="440" y="38" letter-spacing="4">ここは、</text>
+      <text class="mv-ttl" font-size="30" style="writing-mode:vertical-rl" x="390" y="38" letter-spacing="3">下北沢の住宅街にある</text>
+      <text class="mv-ttl" font-size="30" style="writing-mode:vertical-rl" x="344" y="38" letter-spacing="3">かくれがのような居場所</text>
+    </svg>
+  </h2>
+
+  <!-- 回転サークル（50秒で1周するバッジ） -->
+  <p class="copy">
+    <svg class="copy-svg" viewBox="0 0 300 300" width="300" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="15才から24才の女の子のためのカフェ。">
+      <!-- 静的な背景イラスト（二重円＋中央テキスト） -->
+      <g class="copy-static">
+        <circle cx="150" cy="150" r="146" fill="#fff" stroke="#000" stroke-width="1.5"/>
+        <circle cx="150" cy="150" r="126" fill="none" stroke="#000" stroke-width="0.8"/>
+        <line x1="100" y1="136" x2="200" y2="136" stroke="#000" stroke-width="0.8"/>
+        <line x1="100" y1="198" x2="200" y2="198" stroke="#000" stroke-width="0.8"/>
+        <text x="150" y="118" text-anchor="middle" font-family="Inter, sans-serif" font-size="32" fill="#000" letter-spacing="5">YOU</text>
+        <text x="150" y="166" text-anchor="middle" font-family="Inter, sans-serif" font-size="32" fill="#000" letter-spacing="4">CAFE</text>
+        <text x="150" y="194" text-anchor="middle" font-family="'Kosugi Maru', sans-serif" font-size="13" fill="#000" letter-spacing="2">ゆうカフェ</text>
+      </g>
+      <!-- 50秒で1周する回転テキスト -->
+      <g class="copy-rotate">
+        <defs>
+          <path id="textCircle" d="M 150,3 A 147,147 0 1 1 149.99,3"/>
+        </defs>
+        <text font-size="12.5" font-family="'Kosugi Maru', 'Hiragino Kaku Gothic ProN', sans-serif" fill="#000" letter-spacing="1.5">
+          <textPath href="#textCircle" startOffset="0%">15才から24才の女の子のためのカフェ。◆ 15才から24才の女の子のためのカフェ。◆ </textPath>
+        </text>
+      </g>
+    </svg>
+  </p>
+
+  <!-- メイン写真（五角形クリップパス） ※実際の写真に差し替えてください -->
+  <div class="img1">
+    <div class="photo-placeholder" style="width:480px;aspect-ratio:480/550;"></div>
+  </div>
+
+  <!-- サービス紹介写真（左端からはみ出す） ※実際の写真に差し替えてください -->
+  <div class="service para">
+    <!-- 実際の写真に差し替える場合: <picture><source media="(min-width:481px)" srcset="img/top_mv_service.jpg"><img src="img/top_mv_service_sp.jpg" alt=""></picture> -->
+    <div class="photo-placeholder" style="width:480px;height:384px;"></div>
+  </div>
+
+  <!-- マップ写真（右端からはみ出す） ※実際の写真に差し替えてください -->
+  <div class="map para">
+    <!-- 実際の写真に差し替える場合: <picture><source media="(min-width:481px)" srcset="img/top_mv_map.jpg"><img src="img/top_mv_map_sp.jpg" alt=""></picture> -->
+    <div class="photo-placeholder" style="width:584px;height:488px;"></div>
+  </div>
+
+  <!-- 装飾写真2・3 ※実際の写真に差し替えてください -->
+  <div class="photo-placeholder img2" style="width:284px;height:241px;"></div>
+  <div class="photo-placeholder img3" style="width:285px;height:213px;"></div>
+
+</div><!-- /.p_mv -->
+
+<!-- ======== イントロセクション ======== -->
+<div class="p_intro">
+
+  <!-- 吹き出しボイスリスト（スクロールで順番にフェードイン） -->
+  <ul class="voice_list para">
+    <li>
+      <!-- 「今日は、ひとりでいたい。」 -->
+      <svg viewBox="0 0 115 119" width="115" height="119" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="今日は、ひとりでいたい。">
+        <rect x="2" y="2" width="111" height="104" rx="18" fill="#000"/>
+        <text text-anchor="middle" font-family="'Kosugi Maru', sans-serif" font-size="14.5" fill="#fff">
+          <tspan x="57" y="38">今日は、</tspan>
+          <tspan x="57" dy="22">ひとりで</tspan>
+          <tspan x="57" dy="22">いたい。</tspan>
+        </text>
+        <polygon points="57,106 72,119 42,119" fill="#000"/>
+      </svg>
+    </li>
+    <li>
+      <!-- 「家にも学校にもいたくない。」（縦書き） -->
+      <svg viewBox="0 0 72 229" width="72" height="229" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="家にも学校にもいたくない。">
+        <rect x="2" y="2" width="68" height="214" rx="14" fill="#fff" stroke="#000" stroke-width="2"/>
+        <text text-anchor="middle" font-family="'Kosugi Maru', sans-serif" font-size="14" fill="#000">
+          <tspan x="36" y="28">家</tspan><tspan x="36" dy="20">に</tspan><tspan x="36" dy="20">も</tspan>
+          <tspan x="36" dy="20">学</tspan><tspan x="36" dy="20">校</tspan><tspan x="36" dy="20">に</tspan>
+          <tspan x="36" dy="20">も</tspan><tspan x="36" dy="20">い</tspan><tspan x="36" dy="20">た</tspan>
+          <tspan x="36" dy="20">く</tspan><tspan x="36" dy="19">な</tspan><tspan x="36" dy="19">い。</tspan>
+        </text>
+      </svg>
+    </li>
+    <li>
+      <!-- 「お茶飲みながら、ゆっくり本読みたい。」（縦書き2列） -->
+      <svg viewBox="0 0 119 244" width="119" height="244" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="お茶飲みながら、ゆっくり本読みたい。">
+        <rect x="2" y="2" width="115" height="230" rx="20" fill="#000"/>
+        <text font-family="'Kosugi Maru', sans-serif" font-size="13.5" fill="#fff">
+          <tspan x="84" y="26">お</tspan><tspan x="84" dy="18">茶</tspan><tspan x="84" dy="18">飲</tspan>
+          <tspan x="84" dy="18">み</tspan><tspan x="84" dy="18">な</tspan><tspan x="84" dy="18">が</tspan>
+          <tspan x="84" dy="18">ら、</tspan>
+        </text>
+        <text font-family="'Kosugi Maru', sans-serif" font-size="13.5" fill="#fff">
+          <tspan x="52" y="26">ゆ</tspan><tspan x="52" dy="18">っ</tspan><tspan x="52" dy="18">く</tspan>
+          <tspan x="52" dy="18">り</tspan><tspan x="52" dy="18">本</tspan><tspan x="52" dy="18">読</tspan>
+          <tspan x="52" dy="18">み</tspan><tspan x="52" dy="18">た</tspan><tspan x="52" dy="18">い。</tspan>
+        </text>
+      </svg>
+    </li>
+    <li>
+      <!-- 「あのこと、誰かと話したい。」 -->
+      <svg viewBox="0 0 115 141" width="115" height="141" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="あのこと、誰かと話したい。">
+        <rect x="2" y="2" width="111" height="124" rx="20" fill="#fff" stroke="#000" stroke-width="2"/>
+        <text text-anchor="middle" font-family="'Kosugi Maru', sans-serif" font-size="14" fill="#000">
+          <tspan x="57" y="40">あのこと、</tspan>
+          <tspan x="57" dy="24">誰かと</tspan>
+          <tspan x="57" dy="24">話したい。</tspan>
+        </text>
+        <polygon points="57,126 73,141 41,141" fill="#000"/>
+        <polygon points="59,126 71,126 57,138" fill="#fff"/>
+      </svg>
+    </li>
+    <li>
+      <!-- 「そんなとき「ゆうカフェ」に来てみない？」 -->
+      <svg viewBox="0 0 116 199" width="116" height="199" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="そんなとき「ゆうカフェ」に来てみない？">
+        <rect x="2" y="2" width="112" height="185" rx="20" fill="#000"/>
+        <text text-anchor="middle" font-family="'Kosugi Maru', sans-serif" font-size="13" fill="#fff">
+          <tspan x="58" y="36">そんなとき</tspan>
+          <tspan x="58" dy="22">「ゆうカフェ」</tspan>
+          <tspan x="58" dy="22">に来て</tspan>
+          <tspan x="58" dy="22">みない？</tspan>
+        </text>
+        <polygon points="58,187 74,199 42,199" fill="#000"/>
+      </svg>
+    </li>
+  </ul>
+
+  <div class="txt">
+    <!-- "Would you like to come?"（スクロールでクリップパスアニメーション） -->
+    <svg class="en para" viewBox="0 0 377 124" width="377" height="124" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Would you like to come?">
+      <text x="0" y="56" font-family="Inter, 'Georgia', serif" font-size="40" fill="#000" font-style="italic" letter-spacing="-1">Would you like</text>
+      <text x="0" y="110" font-family="Inter, 'Georgia', serif" font-size="40" fill="#000" font-style="italic" letter-spacing="-1">to come?</text>
+    </svg>
+
+    <p>ゲーム、漫画、読書、勉強、おしゃべり。<br>ここは、なにしてもいいところ。</p>
+    <p>友だちと来てもいいし、ひとりでもいい。<br>ずっといてもいいし、すぐ帰ってもいい。</p>
+    <p>飲みものも、おやつも、<br>Wi-Fiも充電もぜんぶ無料です。</p>
+    <p>YOU CAFE（ゆうカフェ）は<br>あなたが"あなた"でいられる<br>「かくれが」です。</p>
+
+    <!-- 装飾写真 ※実際の写真に差し替えてください -->
+    <div class="photo-placeholder img1" style="width:319px;height:312px;"></div>
+    <div class="photo-placeholder img2" style="width:345px;height:280px;"></div>
+  </div>
+
+</div><!-- /.p_intro -->
+
+<!-- ======== ABOUT ======== -->
+<section class="s_about">
+
+  <h2 class="s_ttl">
+    <span class="ja">
+      <!-- 「ゆうカフェ」は、中学校を卒業した15才から24才の女の子のためのカフェです。 -->
+      <svg viewBox="0 0 307 329" width="307" height="329" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="「ゆうカフェ」は、中学校を卒業した15才から24才の女の子のためのカフェです。">
+        <text font-family="'Kosugi Maru', sans-serif" fill="#000" font-size="24" font-weight="bold" style="writing-mode:vertical-rl" x="278" y="20" letter-spacing="3">「ゆうカフェ」は、</text>
+        <text font-family="'Kosugi Maru', sans-serif" fill="#000" font-size="20" style="writing-mode:vertical-rl" x="220" y="20" letter-spacing="2">15才から24才の</text>
+        <text font-family="'Kosugi Maru', sans-serif" fill="#000" font-size="20" style="writing-mode:vertical-rl" x="174" y="20" letter-spacing="2">女の子のための</text>
+        <text font-family="'Kosugi Maru', sans-serif" fill="#000" font-size="20" style="writing-mode:vertical-rl" x="128" y="20" letter-spacing="2">カフェです。</text>
+      </svg>
+      <!-- 吹き出し「中学校を卒業した」 -->
+      <svg class="bal" viewBox="0 0 113 71" width="113" height="71" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="中学校を卒業した">
+        <rect x="2" y="2" width="109" height="54" rx="12" fill="#000"/>
+        <text x="56" y="22" text-anchor="middle" font-family="'Kosugi Maru', sans-serif" font-size="12" fill="#fff" letter-spacing="1">中学校を</text>
+        <text x="56" y="42" text-anchor="middle" font-family="'Kosugi Maru', sans-serif" font-size="12" fill="#fff" letter-spacing="1">卒業した</text>
+        <polygon points="35,56 60,71 80,56" fill="#000"/>
+      </svg>
+    </span>
+    <span class="en">
+      <svg viewBox="0 0 333 114" width="333" height="114" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="about 'YOU CAFE'">
+        <text x="0" y="54" font-family="Inter, 'Georgia', serif" font-size="44" fill="#000" font-style="italic" letter-spacing="-1">about</text>
+        <text x="0" y="106" font-family="Inter, 'Georgia', serif" font-size="36" fill="#000" font-style="italic" letter-spacing="-0.5">'YOU CAFE'</text>
+      </svg>
+    </span>
+  </h2>
+
+  <p class="s_lead">ゆうカフェは、女の子が安心して<br>すごせる居場所をつくるために、<br>公益財団法人プラン・インターナショナル・<br>ジャパンが運営しています。</p>
+
+  <!-- 装飾マーク ※実際の画像に差し替えてください -->
+  <div class="photo-placeholder mark" style="width:216px;height:242px;background:transparent;border:2px dashed #ccc;border-radius:4px;"></div>
+
+  <ul class="about_list">
+    <li>
+      <!-- ※実際の写真に差し替えてください -->
+      <div class="photo-placeholder img" style="width:364px;height:246px;"></div>
+      <h3 class="ttl">
+        <svg viewBox="0 0 303 109" width="303" height="109" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="すごしかたは人それぞれ">
+          <text x="0" y="52" font-family="'Kosugi Maru', sans-serif" font-size="30" fill="#000" font-weight="bold" letter-spacing="2">すごしかたは</text>
+          <text x="0" y="100" font-family="'Kosugi Maru', sans-serif" font-size="30" fill="#000" font-weight="bold" letter-spacing="2">人それぞれ</text>
+        </svg>
+      </h3>
+      <p>ひとりでのんびりスマホを見る、本を読む、<br>勉強に集中する、友だちとおしゃべりする、<br>どのすごしかたも大歓迎です。</p>
+    </li>
+    <li>
+      <!-- ※実際の写真に差し替えてください -->
+      <div class="photo-placeholder img" style="width:364px;height:246px;"></div>
+      <h3 class="ttl">
+        <svg viewBox="0 0 303 109" width="303" height="109" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="生活応援グッズ">
+          <text x="0" y="52" font-family="'Kosugi Maru', sans-serif" font-size="30" fill="#000" font-weight="bold" letter-spacing="2">生活応援</text>
+          <text x="0" y="100" font-family="'Kosugi Maru', sans-serif" font-size="30" fill="#000" font-weight="bold" letter-spacing="2">グッズ</text>
+        </svg>
+      </h3>
+      <p>食料・生理用品・日用品など、<br>生活に必要なものを自分で選んで<br>持ちかえることができます。</p>
+    </li>
+    <li>
+      <!-- ※実際の写真に差し替えてください -->
+      <div class="photo-placeholder img" style="width:364px;height:246px;"></div>
+      <h3 class="ttl">
+        <svg viewBox="0 0 303 109" width="303" height="109" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="なんでも相談">
+          <text x="0" y="52" font-family="'Kosugi Maru', sans-serif" font-size="30" fill="#000" font-weight="bold" letter-spacing="2">なんでも</text>
+          <text x="0" y="100" font-family="'Kosugi Maru', sans-serif" font-size="30" fill="#000" font-weight="bold" letter-spacing="2">相談</text>
+        </svg>
+      </h3>
+      <p>身体のこと、家族・友達・恋人とのこと、<br>お金やくらし、進路、なんでも相談できます。<br>あなたの悩みや考えを否定しません。<br>ソーシャルワーカー、心理士、<br>助産師が次の一歩を一緒に考えます。</p>
+    </li>
+  </ul>
+
+</section><!-- /.s_about -->
+
+<!-- ======== 利用ガイド ======== -->
+<section class="s_guide">
+
+  <h2 class="s_ttl">
+    <span class="ja">
+      <svg viewBox="0 0 220 340" width="220" height="340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="「ゆうカフェ」は、全部無料で利用できます。">
+        <text font-family="'Kosugi Maru', sans-serif" fill="#000" font-size="26" font-weight="bold" style="writing-mode:vertical-rl" x="190" y="20" letter-spacing="3">全部無料で</text>
+        <text font-family="'Kosugi Maru', sans-serif" fill="#000" font-size="26" font-weight="bold" style="writing-mode:vertical-rl" x="148" y="20" letter-spacing="3">利用できます。</text>
+      </svg>
+    </span>
+    <span class="en">
+      <svg viewBox="0 0 380 116" width="380" height="116" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Free of Charge ¥0">
+        <text x="0" y="60" font-family="Inter, 'Georgia', serif" font-size="48" fill="#000" font-style="italic" letter-spacing="-1">Free of Charge</text>
+        <text x="0" y="108" font-family="Inter, 'Georgia', serif" font-size="44" fill="#000" font-style="italic" letter-spacing="-1">¥0</text>
+      </svg>
+    </span>
+  </h2>
+
+  <!-- 吹き出し装飾 ※実際の画像に差し替えてください -->
+  <div class="photo-placeholder bal" style="width:60px;height:48px;background:transparent;"></div>
+
+  <!-- 写真 ※実際の写真に差し替えてください -->
+  <div class="photo-placeholder img1" style="width:207px;height:207px;border-radius:50%;"></div>
+  <div class="photo-placeholder img2" style="width:490px;height:312px;"></div>
+
+  <!-- 時間案内写真 ※実際の写真に差し替えてください -->
+  <div class="guide">
+    <div class="photo-placeholder" style="width:490px;height:380px;clip-path:polygon(0 0, 100% 0, 100% 50px, calc(100% - 89px) calc(100% - 70px), 100% calc(100% - 72px), 100% 100%, 0 100%);"></div>
+    <div class="photo-placeholder" style="width:374px;height:316px;"></div>
+  </div>
+
+  <!-- サービス一覧 -->
+  <div class="service">
+    <div class="ttl">
+      <svg viewBox="0 0 500 65" width="500" height="65" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ゆうカフェにあるもの">
+        <text x="0" y="50" font-family="'Kosugi Maru', sans-serif" font-size="36" fill="#000" font-weight="bold" letter-spacing="2">ゆうカフェにあるもの</text>
+      </svg>
+    </div>
+    <ul class="service_list para">
+      <li>のみもの</li>
+      <li>軽食</li>
+      <li>生理用品</li>
+      <li>日用品</li>
+      <li>wi-fi・電源</li>
+      <li>性に関する<br>情報</li>
+      <li>イベント</li>
+      <li>相談</li>
+    </ul>
+  </div>
+
+  <!-- 注意事項 -->
+  <ul class="check_list">
+    <li>席にかぎりがあるので、事前の予約をおすすめします。</li>
+    <li>
+      男性の利用はできません。
+      <span class="notes">※ゆうカフェは、地域の協働スペース「COS下北沢」のカフェ・ホールスペースを利用して開催します。COS下北沢を共同利用している団体関係者（男性含む）が共用の設備を利用するため、カフェ・ホールスペースに立ち入る場合があります。</span>
+    </li>
+  </ul>
+
+  <a href="/guide/" class="btn l">利用ガイドを見る・予約する</a>
+
+</section><!-- /.s_guide -->
+
+<!-- ======== INSTAGRAM ======== -->
+<section class="s_instagram">
+
+  <div class="s_ttl">
+    <svg viewBox="0 0 560 85" width="560" height="85" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="YOU CAFE DAYS - Instagram">
+      <text x="0" y="65" font-family="Inter, 'Georgia', serif" font-size="58" fill="#000" font-style="italic" letter-spacing="-2">YOU CAFE DAYS</text>
+    </svg>
+  </div>
+
+  <!-- Instagramフィード（実際の写真に差し替えてください） -->
+  <ul class="timeline">
+    <li><a href="https://www.instagram.com/youcafe.jp" target="_blank"><div class="photo-placeholder" style="width:100%;aspect-ratio:1;"></div></a></li>
+    <li><a href="https://www.instagram.com/youcafe.jp" target="_blank"><div class="photo-placeholder" style="width:100%;aspect-ratio:1;"></div></a></li>
+    <li><a href="https://www.instagram.com/youcafe.jp" target="_blank"><div class="photo-placeholder" style="width:100%;aspect-ratio:1;"></div></a></li>
+    <li><a href="https://www.instagram.com/youcafe.jp" target="_blank"><div class="photo-placeholder" style="width:100%;aspect-ratio:1;"></div></a></li>
+    <li><a href="https://www.instagram.com/youcafe.jp" target="_blank"><div class="photo-placeholder" style="width:100%;aspect-ratio:1;"></div></a></li>
+    <li><a href="https://www.instagram.com/youcafe.jp" target="_blank"><div class="photo-placeholder" style="width:100%;aspect-ratio:1;"></div></a></li>
+    <li><a href="https://www.instagram.com/youcafe.jp" target="_blank"><div class="photo-placeholder" style="width:100%;aspect-ratio:1;"></div></a></li>
+    <li><a href="https://www.instagram.com/youcafe.jp" target="_blank"><div class="photo-placeholder" style="width:100%;aspect-ratio:1;"></div></a></li>
+    <li><a href="https://www.instagram.com/youcafe.jp" target="_blank"><div class="photo-placeholder" style="width:100%;aspect-ratio:1;"></div></a></li>
+    <li><a href="https://www.instagram.com/youcafe.jp" target="_blank"><div class="photo-placeholder" style="width:100%;aspect-ratio:1;"></div></a></li>
+    <li><a href="https://www.instagram.com/youcafe.jp" target="_blank"><div class="photo-placeholder" style="width:100%;aspect-ratio:1;"></div></a></li>
+    <li><a href="https://www.instagram.com/youcafe.jp" target="_blank"><div class="photo-placeholder" style="width:100%;aspect-ratio:1;"></div></a></li>
+  </ul>
+
+</section><!-- /.s_instagram -->
+
+<!-- ======== MAP & ACCESS ======== -->
+<section class="s_map">
+
+  <h2 class="s_ttl">
+    <span class="en">
+      <svg viewBox="0 0 470 110" width="470" height="110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map & Access ゆうカフェへのアクセス">
+        <text x="0" y="58" font-family="Inter, 'Georgia', serif" font-size="50" fill="#000" font-style="italic" letter-spacing="-1">Map &amp; Access</text>
+        <text x="35" y="102" font-family="'Kosugi Maru', sans-serif" font-size="22" fill="#000" letter-spacing="1">ゆうカフェへのアクセス</text>
+      </svg>
+    </span>
+  </h2>
+
+  <p class="s_lead">下北沢駅から徒歩5分、<br>地域の協働スペース「COS下北沢」の1階にあります。</p>
+
+  <address>
+    〒155-0031 東京都世田谷区北沢2-39-6 COS下北沢1階<br>
+    TEL：<a href="tel:0357875585">03-5787-5585</a>
+  </address>
+
+  <div class="map-wrap">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.4823478456576!2d139.66558667631408!3d35.66248617259551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f3b7c2b3c6b1%3A0x8e8a3c9a4fe2c3d0!2sCOS%E4%B8%8B%E5%8C%97%E6%B2%A2!5e0!3m2!1sja!2sjp!4v1700000000000"
+      width="100%"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="ゆうカフェへのアクセスマップ"
+    ></iframe>
+  </div>
+
+  <a href="/access/" class="btn l wh">下北沢駅からの道順を見る</a>
+
+</section><!-- /.s_map -->
+
+<!-- ======== フッター ======== -->
+<footer>
+  <div class="ft1">
+    <div class="inr">
+      <div class="contact">
+        <a class="logo" href="/">
+          <img src="img/logo_youcafe.svg" width="137" height="120" alt="YOU CAFE（ゆうカフェ）">
+        </a>
+        <ul class="glo_nav">
+          <li><a href="/">TOPページ</a></li>
+          <li><a href="/guide/">利用ガイド・予約</a></li>
+          <li><a href="/access/">アクセス</a></li>
+        </ul>
+        <a href="/form/inquiry/" class="btn s" target="_blank">お問い合わせ</a>
+      </div>
+
+      <p class="ttl">運営団体</p>
+
+      <div class="us">
+        <div class="plan">
+          <!-- プラン・インターナショナル・ジャパンのロゴ ※実際のロゴ画像に差し替えてください -->
+          <div class="photo-placeholder" style="width:80px;height:80px;border-radius:4px;"></div>
+          <div class="name">
+            <h3>公益財団法人プラン・インターナショナル・ジャパン</h3>
+            <a href="https://www.plan-international.jp" target="_blank">www.plan-international.jp</a>
+          </div>
+        </div>
+        <p class="txt">プラン・インターナショナルは、誰もが平等な世界の実現にむけ、世界80カ国以上で子どもたちや女の子たちとともに活動する国際NGOです。</p>
+        <ul class="link_list">
+          <li><a href="https://www.plan-international.jp/about/safeguarding/" target="_blank">子どもと若者のセーフガーディング</a></li>
+          <li><a href="https://www.plan-international.jp/about/gender/" target="_blank">ジェンダー平等と包摂に関するグローバル・ポリシー</a></li>
+          <li><a href="https://www.unicef.or.jp/crc/" target="_blank">子どもの権利条約</a></li>
+          <li><a href="/privacy/" target="_blank">個人情報保護</a></li>
+        </ul>
+        <p class="txt">「世田谷区悩みや困難を抱える若年女性への居場所事業補助金（世田谷区地域保健福祉等推進基金活用）」を活用し、ゆうカフェを運営しています。</p>
+      </div>
+
+      <div class="watacafe">
+        <h3>
+          <svg viewBox="0 0 240 36" width="240" height="36" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="WATA CAFE & Chat">
+            <text x="0" y="28" font-family="Inter, sans-serif" font-size="28" fill="#000" font-style="italic" letter-spacing="-0.5">WATA CAFE &amp; Chat</text>
+          </svg>
+        </h3>
+        <p>プラン・インターナショナルは、女の子が安心して相談できる居場所・相談事業を行っています。あわせてご利用ください。</p>
+        <ul class="link_list">
+          <li><a href="#" target="_blank">15才から24才の女の子のためのカフェ 「わたカフェ」</a></li>
+          <li><a href="#" target="_blank">女の子のためのチャット相談</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="ft2">
+    <p class="copyright">Copyright &copy; YOU CAFE. All rights reserved.</p>
+  </div>
+</footer>
+
+</div><!-- /.p_wrap -->
+</body>
+</html>

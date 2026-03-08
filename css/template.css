@@ -1,0 +1,260 @@
+/* ========================================
+   LPテンプレート共通スタイル
+   暖色・白基調・高級感デザイン
+   ======================================== */
+:root {
+  --lp-bg:           #faf7f2;
+  --lp-surface:      #ffffff;
+  --lp-border:       #eedfd0;
+  --lp-border-light: #f5ece3;
+  --lp-text:         #2c2118;
+  --lp-text-mid:     #5c4a38;
+  --lp-muted:        #9a8878;
+  --lp-gold:         #b8965a;
+  --lp-gold-light:   #d4ae72;
+  --lp-gold-deep:    #9a7a40;
+  --lp-gold-glow:    rgba(184, 150, 90, 0.18);
+  --lp-line:         #06c755;
+  --lp-font:         "Noto Sans JP", sans-serif;
+  --lp-radius:       12px;
+  --shadow-sm:       0 2px 12px rgba(100, 70, 30, 0.07);
+  --shadow-md:       0 6px 32px rgba(100, 70, 30, 0.11);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--lp-font);
+  background: var(--lp-bg);
+  color: var(--lp-text);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+.lp {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 1rem 5rem;
+}
+
+/* ==============================
+   ヒーロー
+   ============================== */
+.lp-hero {
+  padding: 3.5rem 0 3rem;
+  text-align: center;
+}
+
+.lp-hero-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: var(--lp-radius);
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.lp-hero-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(135deg, #f5ece0 0%, #ede0d0 100%);
+  border-radius: var(--lp-radius);
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--lp-muted);
+  font-size: 0.82rem;
+  border: 1.5px dashed var(--lp-border);
+}
+
+.lp-hero-placeholder span:first-child {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.lp-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--lp-gold);
+  margin-bottom: 0.875rem;
+}
+
+.lp-catch {
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
+  font-weight: 700;
+  margin: 0 0 0.875rem;
+  line-height: 1.4;
+  color: var(--lp-text);
+  letter-spacing: -0.01em;
+}
+
+.lp-divider {
+  width: 36px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--lp-gold), transparent);
+  margin: 0 auto 1.25rem;
+}
+
+.lp-sub {
+  font-size: 0.93rem;
+  color: var(--lp-text-mid);
+  margin: 0 0 1.75rem;
+  white-space: pre-line;
+  line-height: 1.85;
+}
+
+/* ==============================
+   セクション
+   ============================== */
+.lp-section {
+  padding: 2.25rem 0;
+  border-top: 1px solid var(--lp-border-light);
+}
+
+.lp-section-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--lp-gold);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.lp-section h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  color: var(--lp-text);
+}
+
+.lp-section p {
+  margin: 0;
+  font-size: 0.93rem;
+  color: var(--lp-text-mid);
+  line-height: 1.85;
+  white-space: pre-line;
+}
+
+/* ==============================
+   特徴リスト
+   ============================== */
+.lp-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lp-features li {
+  padding: 0.65rem 0 0.65rem 1.5rem;
+  position: relative;
+  font-size: 0.93rem;
+  color: var(--lp-text-mid);
+  border-bottom: 1px solid var(--lp-border-light);
+}
+
+.lp-features li:last-child {
+  border-bottom: none;
+}
+
+.lp-features li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.05em;
+  width: 5px;
+  height: 5px;
+  background: var(--lp-gold);
+  border-radius: 50%;
+}
+
+/* ==============================
+   CTA（LINE ボタン）
+   ============================== */
+.lp-cta {
+  padding: 3rem 0 1.5rem;
+  text-align: center;
+}
+
+.lp-cta-rule {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--lp-border), transparent);
+  margin: 0 auto 2rem;
+}
+
+.btn-line {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2.25rem;
+  font-family: var(--lp-font);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--lp-line);
+  border-radius: var(--lp-radius);
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(6, 199, 85, 0.3);
+  transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+  letter-spacing: 0.04em;
+}
+
+.btn-line::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.13.031-.195.031-.211 0-.41-.101-.535-.277l-1.98-2.692v2.343c0 .345-.283.63-.63.63-.346 0-.629-.285-.629-.63V8.108c0-.27.173-.51.43-.595.06-.023.127-.033.194-.033.211 0 .411.1.535.277l1.981 2.692V8.108c0-.345.282-.63.63-.63.346 0 .63.285.63.63v4.771zm-5.74 0c0 .345-.282.63-.63.63-.344 0-.627-.285-.627-.63V8.108c0-.345.283-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314'/%3E%3C/svg%3E") center/contain no-repeat;
+  flex-shrink: 0;
+}
+
+.btn-line:hover {
+  opacity: 0.92;
+  transform: scale(1.025);
+  box-shadow: 0 6px 28px rgba(6, 199, 85, 0.38);
+}
+
+.btn-line:active {
+  transform: scale(0.98);
+}
+
+.btn-line.disabled {
+  background: #d0c8c0;
+  box-shadow: none;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-line.disabled::before {
+  opacity: 0.5;
+}
+
+.lp-cta-note {
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  color: var(--lp-muted);
+  letter-spacing: 0.03em;
+}
+
+/* ==============================
+   フッター装飾
+   ============================== */
+.lp-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--lp-border-light);
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--lp-muted);
+  letter-spacing: 0.04em;
+}

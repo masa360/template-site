@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スクール｜LPテンプレート</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/template.css">
+</head>
+<body>
+  <div class="lp">
+
+    <section class="lp-hero">
+      <div id="hero-visual">
+        <div class="lp-hero-placeholder">
+          <span>📚</span>
+          <span>講座・スクール画像</span>
+        </div>
+      </div>
+      <span class="lp-eyebrow">School &amp; Course</span>
+      <h1 class="lp-catch" id="catch">学びで、可能性が広がる。</h1>
+      <div class="lp-divider"></div>
+      <p class="lp-sub" id="sub">初心者でも安心。
+現役プロが基礎からサポートします。</p>
+    </section>
+
+    <section class="lp-section">
+      <span class="lp-section-label">About</span>
+      <h2>講座・スクール概要</h2>
+      <p id="company">〇〇スクール
+受講生累計500名以上。
+少人数制で一人ひとりに丁寧に対応。</p>
+    </section>
+
+    <section class="lp-section">
+      <span class="lp-section-label">Features</span>
+      <h2>この講座のポイント</h2>
+      <ul class="lp-features" id="features">
+        <li>オンライン・対面どちらも対応</li>
+        <li>無料体験レッスンあり</li>
+        <li>修了後もサポート継続</li>
+      </ul>
+    </section>
+
+    <section class="lp-cta">
+      <div class="lp-cta-rule"></div>
+      <a href="#" id="line-btn" class="btn-line">LINEで無料相談・お申し込み</a>
+      <p class="lp-cta-note">タップするとLINEに移動します</p>
+    </section>
+
+    <footer class="lp-footer" id="lp-footer">〇〇スクール</footer>
+  </div>
+
+  <script>
+    (function () {
+      var p = new URLSearchParams(location.search);
+      var get = function (k) { var v = p.get(k); return v ? decodeURIComponent(v) : null; };
+
+      var img      = get('img');
+      var catchTxt = get('catch');
+      var sub      = get('sub');
+      var company  = get('company');
+      var features = get('features');
+      var lineUrl  = get('lineUrl');
+
+      if (img) {
+        document.getElementById('hero-visual').innerHTML =
+          '<img class="lp-hero-img" src="' + img.replace(/"/g,'&quot;') + '" alt="">';
+      }
+      if (catchTxt) document.getElementById('catch').textContent = catchTxt;
+      if (sub)      document.getElementById('sub').textContent = sub;
+      if (company) {
+        document.getElementById('company').textContent = company;
+        document.getElementById('lp-footer').textContent = company.split('\n')[0] || '';
+      }
+      if (features) {
+        var items = features.split('\n').filter(Boolean);
+        document.getElementById('features').innerHTML =
+          items.map(function (s) { return '<li>' + s.trim() + '</li>'; }).join('');
+      }
+      var btn = document.getElementById('line-btn');
+      if (lineUrl) { btn.href = lineUrl; }
+      else { btn.classList.add('disabled'); btn.removeAttribute('href'); }
+    })();
+  </script>
+</body>
+</html>

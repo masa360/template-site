@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="一杯のコーヒーから、はじまる時間。厳選豆と手作りの軽食で、いつものひとときを特別に。">
+  <title>珈琲と、ひだまり。｜コーヒーと軽食のサンプルLP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">メインコンテンツへスキップ</a>
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#" class="logo">珈琲と、ひだまり。</a>
+      <nav class="nav" aria-label="メインメニュー">
+        <a href="#about">こだわり</a>
+        <a href="#menu">メニュー</a>
+        <a href="#story">豆のこと</a>
+        <a href="#voice">お客様の声</a>
+        <a href="#access">アクセス</a>
+      </nav>
+      <button type="button" class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
+    </div>
+    <div class="nav-sp" id="nav-sp">
+      <a href="#about">こだわり</a>
+      <a href="#menu">メニュー</a>
+      <a href="#story">豆のこと</a>
+      <a href="#voice">お客様の声</a>
+      <a href="#access">アクセス</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="hero-label" data-inview>COFFEE & LIGHT MEALS</p>
+        <h1 class="hero-catch" data-inview>一杯のコーヒーから、<br>はじまる時間。</h1>
+        <p class="hero-lead" data-inview>厳選した豆をその場で挽き、一杯ずつ淹れる。<br class="u-pc">手作りの軽食とともに、いつものひとときを特別に。</p>
+        <a href="#menu" class="hero-cta" data-inview>メニューを見る</a>
+      </div>
+      <div class="hero-scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <span class="hero-scroll-line"></span>
+      </div>
+    </section>
+
+    <section class="campaign" data-inview>
+      <div class="container">
+        <a href="#menu" class="campaign-inner">
+          <span class="campaign-badge">NEW</span>
+          <span class="campaign-text">今月のシングルオリジンはエチオピア・イルガチェフェ。フルーティーな酸味が特徴です。</span>
+          <span class="campaign-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="container">
+        <p class="section-label" data-inview>01 — ABOUT</p>
+        <h2 class="section-ttl" data-inview>こだわり</h2>
+        <p class="section-lead" data-inview>豆の選定から焙煎、抽出まで。私たちが「いい」と信じる一杯だけをお届けします。</p>
+        <div class="about-grid">
+          <article class="about-card" data-inview>
+            <div class="about-card-img about-card-img--single">
+              <span class="about-card-tag">個性派</span>
+            </div>
+            <div class="about-card-body">
+              <h3 class="about-card-ttl">シングルオリジン</h3>
+              <p class="about-card-desc">ひとつの産地の豆だけを使った、その時期ならではの味わい。産地の個性をそのままに、浅め〜中煎りで焙煎しています。</p>
+            </div>
+          </article>
+          <article class="about-card" data-inview>
+            <div class="about-card-img about-card-img--blend">
+              <span class="about-card-tag">定番</span>
+            </div>
+            <div class="about-card-body">
+              <h3 class="about-card-ttl">ハウスブレンド</h3>
+              <p class="about-card-desc">複数産地を調合した、飲みやすくバランスのよい一杯。深煎りならではの香ばしさで、食事の前後どちらにも合わせやすい定番です。</p>
+            </div>
+          </article>
+        </div>
+        <p class="about-note" data-inview>注文を受けてから一杯ずつ挽いて淹れるため、お渡しまで少々お待ちいただく場合がございます。</p>
+      </div>
+    </section>
+
+    <section id="menu" class="section menu">
+      <div class="container">
+        <p class="section-label" data-inview>02 — MENU</p>
+        <h2 class="section-ttl" data-inview>メニュー</h2>
+        <p class="section-lead" data-inview>コーヒーと、ちょっとした軽食・スイーツで、ゆったりとした時間を。</p>
+        <div class="menu-tabs" role="tablist" data-inview>
+          <button type="button" class="menu-tab is-active" id="tab-coffee" role="tab" data-tab="coffee" aria-selected="true" aria-controls="panel-coffee">コーヒー</button>
+          <button type="button" class="menu-tab" id="tab-food" role="tab" data-tab="food" aria-selected="false" aria-controls="panel-food">軽食・スイーツ</button>
+        </div>
+        <div class="menu-panels">
+          <div class="menu-panel is-active" id="panel-coffee" role="tabpanel" aria-labelledby="tab-coffee">
+            <ul class="menu-list">
+              <li class="menu-item">
+                <span class="menu-name">ブレンド（ホット / アイス）</span>
+                <span class="menu-price">¥480</span>
+              </li>
+              <li class="menu-item">
+                <span class="menu-name">シングルオリジン（ホット / アイス）</span>
+                <span class="menu-price">¥520</span>
+              </li>
+              <li class="menu-item">
+                <span class="menu-name">カフェラテ</span>
+                <span class="menu-price">¥550</span>
+              </li>
+              <li class="menu-item">
+                <span class="menu-name">カフェモカ</span>
+                <span class="menu-price">¥580</span>
+              </li>
+              <li class="menu-item">
+                <span class="menu-name">アイスティー</span>
+                <span class="menu-price">¥450</span>
+              </li>
+            </ul>
+          </div>
+          <div class="menu-panel" id="panel-food" role="tabpanel" aria-labelledby="tab-food" hidden>
+            <ul class="menu-list">
+              <li class="menu-item">
+                <span class="menu-name">日替わりサンドイッチ</span>
+                <span class="menu-price">¥680</span>
+              </li>
+              <li class="menu-item">
+                <span class="menu-name">トーストセット（バター / ジャム）</span>
+                <span class="menu-price">¥420</span>
+              </li>
+              <li class="menu-item">
+                <span class="menu-name">本日のスープ</span>
+                <span class="menu-price">¥350</span>
+              </li>
+              <li class="menu-item">
+                <span class="menu-name">焼き菓子（日替わり）</span>
+                <span class="menu-price">¥380</span>
+              </li>
+              <li class="menu-item">
+                <span class="menu-name">ケーキセット（ドリンク付き）</span>
+                <span class="menu-price">¥780</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="section story">
+      <div class="story-visual" aria-hidden="true"></div>
+      <div class="container">
+        <p class="section-label section-label--light" data-inview>03 — STORY</p>
+        <h2 class="section-ttl" data-inview>豆から、一杯まで。</h2>
+        <div class="story-content">
+          <div class="story-block" data-inview>
+            <span class="story-num" aria-hidden="true">01</span>
+            <h3 class="story-ttl">産地と直接向き合う</h3>
+            <p>商社を介さず、信頼できる農園や協同組合と直接取引。産地の気候や栽培方法を把握したうえで、私たちの「一杯」に合う豆だけを選んでいます。</p>
+          </div>
+          <div class="story-block" data-inview>
+            <span class="story-num" aria-hidden="true">02</span>
+            <h3 class="story-ttl">焙煎は店舗のすぐそばで</h3>
+            <p>仕入れた生豆は、店舗に併設した小さな焙煎機で焙煎。焙煎したての香りと鮮度を保ったまま、お客様のカップに届くよう心がけています。</p>
+          </div>
+          <div class="story-block" data-inview>
+            <span class="story-num" aria-hidden="true">03</span>
+            <h3 class="story-ttl">挽いて、淹れて、届ける</h3>
+            <p>作りおきはしません。ご注文をいただいてから豆を挽き、その場で一杯ずつ抽出。フレッシュな一杯だけをお届けします。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="voice" class="section voice">
+      <div class="container">
+        <p class="section-label" data-inview>04 — VOICE</p>
+        <h2 class="section-ttl" data-inview>お客様の声</h2>
+        <div class="voice-list">
+          <blockquote class="voice-item" data-inview>
+            <p class="voice-text">「仕事の合間に立ち寄るのが日課になりました。挽きたての香りと、いつも同じ味わいが安心感になっています。」</p>
+            <footer class="voice-meta">— 30代・会社員 女性</footer>
+          </blockquote>
+          <blockquote class="voice-item" data-inview>
+            <p class="voice-text">「サンドイッチとコーヒーのセットで、ちょうどよい軽食に。店内の雰囲気も落ち着いていて、本を読みながら過ごすのが好きです。」</p>
+            <footer class="voice-meta">— 40代・自営業 男性</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="access" class="section access">
+      <div class="container">
+        <p class="section-label" data-inview>05 — ACCESS</p>
+        <h2 class="section-ttl" data-inview>店舗情報</h2>
+        <div class="access-inner">
+          <div class="access-info" data-inview>
+            <dl class="access-dl">
+              <dt>住所</dt>
+              <dd>〒100-0001 東京都千代田区○○ 1-2-3（サンプル）</dd>
+              <dt>営業時間</dt>
+              <dd>8:00〜18:00（L.O. 17:30）</dd>
+              <dt>定休日</dt>
+              <dd>水曜日</dd>
+            </dl>
+            <a href="#" class="access-cta">地図で見る</a>
+          </div>
+          <div class="access-map" data-inview>
+            <div class="access-map-placeholder" aria-hidden="true">
+              <span class="access-map-icon" aria-hidden="true">📍</span>
+              <span>地図（サンプル）</span>
+            </div>
+          </div>
+        </div>
+        <p class="access-note">※ 本ページはコーヒー・軽食のサンプルLPです。記載の内容・価格は架空のものです。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-logo">珈琲と、ひだまり。</p>
+      <nav class="footer-nav" aria-label="フッターナビゲーション">
+        <a href="#about">こだわり</a>
+        <a href="#menu">メニュー</a>
+        <a href="#access">アクセス</a>
+      </nav>
+      <p class="footer-copy">&copy; サンプルLP - 商用利用時は文言・画像を差し替えてご利用ください。</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
