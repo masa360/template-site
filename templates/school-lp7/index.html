@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>モノコトLab.｜TKエンジニアリング株式会社</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="できた！をつくるモノづくりスクール。電子工作キットで子どもたちの「できた！」の声をつくる学習スクール。" />
+
+  <!-- Google Fonts（実サイトのフォントに近似） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ==============================================
+       固定ヘッダー
+       ============================================== -->
+  <header class="site-header" id="top">
+    <div class="site-header__inner">
+
+      <!-- ▼ ロゴ（クライアントごとに差し替え） -->
+      <a href="#top" class="site-logo">
+        <div class="site-logo__left">
+          <span class="site-logo__mono">モノ</span>
+          <span class="site-logo__koto">コト</span>
+        </div>
+        <div class="site-logo__right">
+          <span class="site-logo__monokoto">MONOKOTO</span>
+          <span class="site-logo__lab">LAB.</span>
+        </div>
+      </a>
+
+      <!-- ▼ MENUボタン -->
+      <button class="menu-btn" id="js-menu-btn" aria-expanded="false" aria-controls="js-global-nav">
+        MENU
+      </button>
+
+      <!-- ▼ グローバルナビゲーション（MENUボタンで開閉） -->
+      <nav class="global-nav" id="js-global-nav" aria-hidden="true">
+        <ul>
+          <li><a href="#top">ホーム</a></li>
+          <li><a href="#curriculum">スターターキット</a></li>
+          <li><a href="#curriculum">カリキュラム</a></li>
+          <li><a href="#option">オプション</a></li>
+          <li><a href="#news">新着情報</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ==============================================
+       フローティングCTAボタン（画面右下に常時表示）
+       ▼ リンク先・文言はクライアントごとに変更
+       ============================================== -->
+  <a href="#contact" class="floating-cta">
+    <span class="floating-cta__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 18" fill="white" width="22" height="16">
+        <path d="M22 0H2C0.9 0 0 .9 0 2v14c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 4l-10 6.25L2 4V2l10 6.25L22 2v2z"/>
+      </svg>
+    </span>
+    <span class="floating-cta__text">
+      <small>まずは</small>
+      お問い合わせください
+    </span>
+  </a>
+
+  <main>
+
+    <!-- ==============================================
+         ① HEROセクション（エメラルドグリーン）
+         ============================================== -->
+    <section id="hero" class="section section--hero">
+      <!-- 回路基板風の背景パターン（CSSで表現） -->
+      <div class="hero-circuit" aria-hidden="true"></div>
+
+      <div class="section__inner hero__inner">
+
+        <!-- ▼ サブキャッチコピー（クライアントごとに変更） -->
+        <p class="hero-subcatch">できた！をつくるモノづくりスクール</p>
+
+        <!-- 白い横線 -->
+        <div class="hero-rule" aria-hidden="true"></div>
+
+        <!-- ▼ メインロゴ（大）：クライアントのロゴ画像に差し替え可 -->
+        <div class="hero-logo" aria-label="モノコト LAB.">
+          <div class="hero-logo__row">
+            <span class="hero-logo__mono">モノ</span>
+            <span class="hero-logo__monokoto">MONOKOTO</span>
+          </div>
+          <div class="hero-logo__row">
+            <span class="hero-logo__koto">コト</span>
+            <span class="hero-logo__lab">LAB.</span>
+          </div>
+        </div>
+
+        <!-- 白い横線 -->
+        <div class="hero-rule" aria-hidden="true"></div>
+
+        <!-- ▼ 受講受付テキスト（クライアントごとに変更） -->
+        <p class="hero-announce">受講申込み受付中！</p>
+
+        <!-- ▼ CTAボタン -->
+        <div class="hero-cta">
+          <a href="#contact" class="cta-pill">
+            <span class="cta-pill__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 18" fill="white" width="20" height="15">
+                <path d="M22 0H2C0.9 0 0 .9 0 2v14c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 4l-10 6.25L2 4V2l10 6.25L22 2v2z"/>
+              </svg>
+            </span>
+            <span class="cta-pill__text">
+              <small>まずは</small>
+              お問い合わせください
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         ② MESSAGEセクション（ビビッドイエロー）
+         ============================================== -->
+    <section id="message" class="section section--message">
+      <div class="section__inner">
+
+        <!-- ▼ マスコットキャラクター「ソルダ」
+             ▼ 実画像は <img src="assets/img/character-solda.png" alt="ソルダ"> に差し替え -->
+        <div class="message-character" aria-hidden="true">
+          <div class="character">
+            <div class="character__body">
+              <div class="character__eye character__eye--l"></div>
+              <div class="character__eye character__eye--r"></div>
+              <div class="character__mouth"></div>
+            </div>
+            <div class="character__leg character__leg--1"></div>
+            <div class="character__leg character__leg--2"></div>
+            <div class="character__leg character__leg--3"></div>
+            <div class="character__leg character__leg--4"></div>
+            <div class="character__cord"></div>
+            <div class="character__reel"></div>
+          </div>
+          <div class="character-balloon">
+            <p>ぼく、ソルダ！</p>
+            <p class="balloon-sub">"はんだ"から生まれた</p>
+          </div>
+        </div>
+
+        <!-- ▼ キャッチコピー（縦書き風レイアウト）
+             ▼ クライアントごとにテキスト変更 -->
+        <div class="message-catch">
+          <div class="message-catch__group">
+            <span class="catch-small">モノをつくる</span>
+            <span class="catch-big">ドキドキ</span>
+          </div>
+          <div class="message-catch__group">
+            <span class="catch-small">コトがはじまる</span>
+            <span class="catch-big">ワクワク</span>
+          </div>
+          <span class="catch-end">を。</span>
+        </div>
+
+        <!-- ▼ メッセージ本文（クライアントごとに差し替え） -->
+        <div class="message-body">
+          <p>「やった、できた！」</p>
+          <p>はじめて自転車に乗れた日のこと、はじめて九九が言えた日のこと、あなたは覚えていますか？</p>
+          <p>どんな小さなことだって、子どもにとっての成功体験はそこから広がる物語のはじまりです。</p>
+          <p>もしかすると失敗するかもしれない。でも、何度だって失敗すればいい。私たちが「できた！」の声が聞けるまで一緒になって挑戦しますから。</p>
+          <p>私たちは「電子工作」というツールを使って、子どもたちの「できた！」の声をいっぱいつくっていきたいと考えています。</p>
+          <p>ドキドキしながら必死になった経験は、いつの間にかワクワクに変わっていく。</p>
+          <p>自分自身で主体的に取り組み、思考するチカラを身につける。ものづくりを通じて、子どもたちのできた！をつくる電子工作スクール「モノコトLab.」が誕生します。</p>
+
+          <a href="#contact" class="cta-pill cta-pill--dark">
+            <span class="cta-pill__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 18" fill="white" width="20" height="15">
+                <path d="M22 0H2C0.9 0 0 .9 0 2v14c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 4l-10 6.25L2 4V2l10 6.25L22 2v2z"/>
+              </svg>
+            </span>
+            <span class="cta-pill__text">
+              <small>まずは</small>
+              お問い合わせください
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         ③ FEATUREセクション（スカイブルー）
+         ============================================== -->
+    <section id="features" class="section section--features">
+      <div class="section__inner">
+
+        <!-- ▼ 背景の大文字装飾（視覚的アクセント） -->
+        <div class="section-bg-word" aria-hidden="true">FEATURE</div>
+
+        <!-- ▼ セクションタイトル（クライアントごとに変更） -->
+        <h2 class="section-title">特徴</h2>
+
+        <!-- ▼ リード文（クライアントごとに変更） -->
+        <p class="features-lead">
+          モノコトLab.はこれまでにない<br />
+          電子工作スクールです。<br />
+          子どもたちが楽しく熱中して<br />
+          取り組める仕組みをご用意しています。
+        </p>
+
+        <!-- ▼ POINTカード（枚数・内容はクライアントごとに変更）
+             ▼ 写真エリアは assets/img/ に画像を置いて <img> タグに差し替え -->
+
+        <!-- POINT 1 -->
+        <article class="feature-card">
+          <div class="feature-card__badge">
+            <span class="badge-label">POINT</span>
+            <span class="badge-num">1</span>
+          </div>
+          <div class="feature-card__content">
+            <h3 class="feature-card__title">
+              自分でつくる チカラ と<br />
+              応用力を身につけます
+            </h3>
+            <p class="feature-card__text">
+              新しい教育指導要領には「主体的・対話的で深い学び」という言葉が登場しています。モノコトLab.では自宅に届くキットで着実にできることを増やしていくとともに、他の子どもたちの作品に触れることで応用力を身につける仕組みを導入予定。主体的に学び、思考するチカラを身につけます。
+            </p>
+            <!-- ▼ 写真エリア（実画像に差し替え） -->
+            <div class="feature-card__photos">
+              <div class="photo-frame photo-frame--tilt-l">
+                <!-- <img src="assets/img/feature1-photo.jpg" alt="電子工作をする様子"> -->
+                <div class="photo-placeholder"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- POINT 2 -->
+        <article class="feature-card">
+          <div class="feature-card__badge">
+            <span class="badge-label">POINT</span>
+            <span class="badge-num">2</span>
+          </div>
+          <div class="feature-card__content">
+            <h3 class="feature-card__title">
+              動画を見ながら いつでも<br />
+              どこでも取り組める
+            </h3>
+            <p class="feature-card__text">
+              作り方の動画を見ながら自分のペースで取り組めます。オプションのオンライン講座では、Google Meetを通じて現役エンジニアの先生が直接解説をします。オンライン講座では、わからないところを自発的に質問しやすい環境を整えております。
+            </p>
+            <div class="feature-card__photos">
+              <div class="photo-frame photo-frame--tilt-l">
+                <!-- <img src="assets/img/feature2-photo1.jpg" alt="タブレットで動画を見る子どもたち"> -->
+                <div class="photo-placeholder"></div>
+              </div>
+              <div class="photo-frame photo-frame--tilt-r photo-frame--offset">
+                <!-- <img src="assets/img/feature2-photo2.jpg" alt="自宅で取り組む子ども"> -->
+                <div class="photo-placeholder"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- POINT 3 -->
+        <article class="feature-card">
+          <div class="feature-card__badge">
+            <span class="badge-label">POINT</span>
+            <span class="badge-num">3</span>
+          </div>
+          <div class="feature-card__content">
+            <h3 class="feature-card__title">
+              先生は ものづくりのプロ
+            </h3>
+            <p class="feature-card__text">
+              教えてくれる先生は、実際にものづくりの現場で活躍する現役のエンジニア。子どもたちがふだん使っているいろいろな商品もつくっているかも！？学校の先生ではない、その道のプロだからこそ教えられる深い学びをお届けします。
+            </p>
+          </div>
+        </article>
+
+        <div class="section-cta">
+          <a href="#contact" class="cta-pill cta-pill--white">
+            <span class="cta-pill__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 18" fill="white" width="20" height="15">
+                <path d="M22 0H2C0.9 0 0 .9 0 2v14c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 4l-10 6.25L2 4V2l10 6.25L22 2v2z"/>
+              </svg>
+            </span>
+            <span class="cta-pill__text">
+              <small>まずは</small>
+              お問い合わせください
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         ④ TEACHERSセクション（ネイビーブルー）
+         ============================================== -->
+    <section id="teachers" class="section section--teachers">
+      <div class="section__inner">
+
+        <!-- ▼ 先生プロフィールカード（クライアントごとに追加・変更）
+             ▼ 写真は assets/img/ に画像を置いて差し替え -->
+
+        <!-- ロボ社長 -->
+        <article class="teacher-card">
+          <div class="teacher-card__icon">
+            <!-- <img src="assets/img/teacher-robo.png" alt="ロボ社長"> -->
+            <div class="teacher-icon-placeholder">👾</div>
+          </div>
+          <div class="teacher-card__body">
+            <h3 class="teacher-card__name">ロボ社長</h3>
+            <p class="teacher-card__label">メッセージ</p>
+            <p class="teacher-card__text">
+              ロボ社長も最初は電子基板を触ることに少しとまどっていましたが、実際に基板キットを使ってみると、そのわかりやすさと楽しさに驚かされました。ロボ社長が体験したように、電子基板は意外にも理解しやすく、すぐに楽しめる教材です。このような教材を用いることで、子どもでも技術的なスキルだけでなく、学ぶ楽しさを知ることができます。
+            </p>
+            <a href="#contact" class="teacher-card__btn">保護者の方へ</a>
+            <p class="teacher-card__text teacher-card__text--sub">
+              電子基板はテレビ、スマートフォン、カメラ、マウス、車など、日常で使われる多くの機器に不可欠な部品です。電子基板の組み立てやプログラミングを通じて、お子様はコンピューターやエレクトロニクスの基本的なスキルを学びます。この経験は、子供たちの自信を高め、達成感を感じさせるものであり、科学、技術、工学、数学（STEM）分野での将来的なキャリアに向けた大切な一歩となります。
+            </p>
+          </div>
+        </article>
+
+        <!-- きょうへい先生 -->
+        <article class="teacher-card">
+          <div class="teacher-card__icon">
+            <!-- <img src="assets/img/teacher-kyohei.jpg" alt="きょうへい先生"> -->
+            <div class="teacher-icon-placeholder">👨‍🔧</div>
+          </div>
+          <div class="teacher-card__body">
+            <h3 class="teacher-card__name">きょうへい先生</h3>
+            <p class="teacher-card__label">メッセージ</p>
+            <p class="teacher-card__text">
+              皆さんは電子工作やプログラムについてどのようなイメージをお持ちですか？難しい、危ないなどのイメージをお持ちの方も少なくないと思います。私は最初電子工作に興味を持ったときに手をかざすだけでランプを付けたり遠くの物を操作できたりと、まるで魔法みたいだと感じました。電気回路は様々な部品を線で繋いだ「魔法陣」、プログラムも一般の人には理解できない「呪文」のようでとても楽しかったことを覚えています。この講習でプログラミングやモノづくりに興味があったら一緒に作っていきましょう！
+            </p>
+          </div>
+        </article>
+
+        <!-- かず先生 -->
+        <article class="teacher-card">
+          <div class="teacher-card__icon">
+            <!-- <img src="assets/img/teacher-kazu.jpg" alt="かず先生"> -->
+            <div class="teacher-icon-placeholder">🏎️</div>
+          </div>
+          <div class="teacher-card__body">
+            <h3 class="teacher-card__name">かず先生</h3>
+            <p class="teacher-card__label">メッセージ</p>
+            <p class="teacher-card__text">
+              元レーサー、今はプログラミングでオリジナルのラジコンを作っているカズです！プログラミングって、ただ画面に向かって文字を打つだけじゃなくて、自分のアイデアを形にして、実際に動かせるのが面白いところ。例えば、ラジコンとコントローラーを作りプログラミングをすることでラジコンの操作や色々なことができるようになります。プログラミングやモノづくりに興味があったら一緒に作っていきましょう！
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         ⑤ CURRICULUMセクション（オレンジ）
+         ============================================== -->
+    <section id="curriculum" class="section section--curriculum">
+      <div class="section__inner">
+
+        <div class="section-bg-word" aria-hidden="true">CURRICULUM</div>
+
+        <h2 class="section-title">カリキュラム</h2>
+
+        <!-- ▼ カリキュラム説明（クライアントごとに変更） -->
+        <p class="curriculum-lead">
+          モノコトLab.に教室はありません。オリジナルキットを使って<br />
+          自宅で学ぶ電子工作スクールです。<br />
+          作り方の動画を見ながら、まずは子ども自身でやってみる。<br />
+          電子工作の基礎を学ぶとともに、<br />
+          自分自身で考え挑戦するチカラを養います。
+        </p>
+
+        <!-- ▼ スターターキットカード -->
+        <div class="kit-card">
+          <div class="kit-card__header">
+            <p class="kit-card__category">電子工作</p>
+            <h3 class="kit-card__title">スターター<br /><span class="kit-title-green">キット</span></h3>
+          </div>
+          <p class="kit-card__lead"><strong>初めての方や工具選定にお悩みの方へおすすめです。</strong></p>
+          <p class="kit-card__desc">
+            基本キットの【基板レベル1】と回路製作に必要なハンダごてを、ものづくりのプロが選定しセットにしました。ハンダごてをお持ちでない方、工具の選定にお悩みの方はこちらのスターターセットをおすすめします。
+          </p>
+          <!-- ▼ 内容物テキスト -->
+          <div class="kit-card__contents">
+            <p class="kit-card__contents-label">（セット内容）</p>
+            <p>ハンダごて・こて台・ツールクリップ・ハンダ吸取線・ハンダ・【基板レベル1】キット</p>
+            <p class="kit-card__note">※基板を入れる専用ケースは5色から選べます。</p>
+            <p class="kit-card__note">※市販のミントタブレットのケース(当キットには含まれません)に収まるサイズに設計しています。ミントタブレットのケースに収める場合、ご自身でLEDライト部分の穴あけ加工が必要です。</p>
+          </div>
+          <!-- ▼ 画像スライダー（実画像は差し替え） -->
+          <div class="kit-card__slider">
+            <div class="slide-placeholder">
+              <!-- <img src="assets/img/starter-kit.jpg" alt="スターターキット"> -->
+              画像エリア
+            </div>
+          </div>
+          <p class="kit-card__price">費用：7,500円(税込)</p>
+        </div>
+
+        <!-- ▼ オリジナルキットカード（6種） -->
+        <div class="kit-card">
+          <div class="kit-card__header">
+            <p class="kit-card__category">電子工作</p>
+            <h3 class="kit-card__title">オリジナル<br /><span class="kit-title-green">キット</span></h3>
+          </div>
+          <p class="kit-card__desc">
+            段階を追って、基板設計や基本的な回路実装を学べる学習教材です。無料公開している動画教材と合わせて学習していきます。実際にさわって、作って、使って、ものづくりの楽しさを体感してください。
+          </p>
+
+          <!-- ▼ 各レベルのキット（クライアントごとに追加・変更） -->
+          <div class="kit-levels">
+
+            <div class="kit-level-item">
+              <div class="kit-level-item__slider">
+                <!-- <img src="assets/img/kit-lv1.jpg" alt="基板レベル1"> -->
+                <div class="slide-placeholder">画像</div>
+              </div>
+              <h4 class="kit-level-item__title">【基板レベル1】ミントケースLED</h4>
+              <p class="kit-level-item__desc">ミントケースが便利なライトに。ハンダ付けの基本とLEDの特性について学ぼう。</p>
+              <p class="kit-level-item__price">費用：2,500円(税込)</p>
+            </div>
+
+            <div class="kit-level-item">
+              <div class="kit-level-item__slider">
+                <div class="slide-placeholder">画像</div>
+              </div>
+              <h4 class="kit-level-item__title">【基板レベル2】タッチライト</h4>
+              <p class="kit-level-item__desc">スイッチの無い、触れると点灯するライト。トランジスタの増幅とコンデンサの役割について学ぼう。</p>
+              <p class="kit-level-item__price">費用：4,000円(税込)</p>
+            </div>
+
+            <div class="kit-level-item">
+              <div class="kit-level-item__slider">
+                <div class="slide-placeholder">画像</div>
+              </div>
+              <h4 class="kit-level-item__title">【基板レベル3】角っちょライト</h4>
+              <p class="kit-level-item__desc">机などの角に置いて、暗くなったら点灯する危険防止ライト。トランジスタのスイッチングとCDSの使用方法について学ぼう。</p>
+              <p class="kit-level-item__price">費用：4,000円(税込)</p>
+            </div>
+
+            <div class="kit-level-item">
+              <div class="kit-level-item__slider">
+                <div class="slide-placeholder">画像</div>
+              </div>
+              <h4 class="kit-level-item__title">【基板レベル4】LEDルーレット</h4>
+              <p class="kit-level-item__desc">すごろくや抽選会などに使える汎用ルーレット。マイコンを使う理由を知ろう。</p>
+              <p class="kit-level-item__price">費用：4,000円(税込)</p>
+            </div>
+
+            <div class="kit-level-item">
+              <div class="kit-level-item__slider">
+                <div class="slide-placeholder">画像</div>
+              </div>
+              <h4 class="kit-level-item__title">【基板レベル5】ポケットピアノ</h4>
+              <p class="kit-level-item__desc">ポケットサイズの小型ピアノ。プル回路とPWMで音程を制御する方法を学ぼう。</p>
+              <p class="kit-level-item__price">費用：7,000円(税込)</p>
+            </div>
+
+            <div class="kit-level-item">
+              <div class="kit-level-item__slider">
+                <div class="slide-placeholder">画像</div>
+              </div>
+              <h4 class="kit-level-item__title">【基板レベル6】ラーメンタイマー</h4>
+              <p class="kit-level-item__desc">カップ麺に特化したキッチンタイマー。ダイナミック点灯の原理、制御方法について学ぼう。</p>
+              <p class="kit-level-item__price">費用：7,000円(税込)</p>
+            </div>
+
+          </div><!-- /.kit-levels -->
+
+          <!-- ▼ 購入ボタン（リンク先はクライアントごとに変更） -->
+          <a href="#" class="ext-btn">ご購入はこちら <span class="ext-btn__icon">⧉</span></a>
+
+        </div><!-- /.kit-card -->
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         ⑥ OPTIONセクション（スカイブルー）
+         ============================================== -->
+    <section id="option" class="section section--option">
+      <div class="section__inner">
+
+        <div class="section-bg-word" aria-hidden="true">OPTION</div>
+
+        <h2 class="section-title">オプション</h2>
+        <p class="section-note">※キットをご購入のお客様限定</p>
+
+        <!-- ▼ オンライン講座カード（クライアントごとに変更） -->
+        <div class="option-card">
+          <h3 class="option-card__title">
+            オンライン講座 にて<br />
+            <span class="option-card__highlight">質問受付中！</span>
+          </h3>
+          <p class="option-card__subtitle">オンラインでものづくりのプロに気軽に質問ができます。</p>
+          <p class="option-card__desc">
+            初めて電子工作に挑戦する方や一人で取り組むのが不安と言う方におすすめです。オンライン(Google Meet)にて個別でものづくりのプロにご質問いただけます。下記よりお申し込みください。
+          </p>
+          <p class="option-card__price">費用：500円(税込)/30分</p>
+          <a href="#" class="ext-btn">お申し込みはこちら <span class="ext-btn__icon">⧉</span></a>
+        </div>
+
+        <!-- ▼ ふるさと納税カード（クライアントごとに変更・不要なら削除） -->
+        <div class="furusato-card">
+          <h3 class="furusato-card__title">
+            ものづくりの街・大東市の<br />
+            <span class="furusato-card__highlight">ふるさと納税返礼品</span> に採用！
+          </h3>
+          <p class="furusato-card__desc">
+            モノコトLab.で使用する第１回の教材は一足先に大東市のふるさと納税返礼品に採用されています。モノコトLab.では合計6回のキットを通じて、電子工作の基礎から応用まで学ぶことができます。
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         ⑦ REVIEWSセクション（ビビッドイエロー）
+         ============================================== -->
+    <section id="reviews" class="section section--reviews">
+      <div class="section__inner">
+
+        <h2 class="section-title">ご感想</h2>
+        <p class="reviews-lead">モノコトLab.をご利用いただいたお客様からのご感想を紹介します。</p>
+
+        <!-- ▼ 口コミカード（クライアントの実際の感想に差し替え） -->
+        <div class="review-cards">
+          <div class="review-card">
+            <p class="review-card__text">口コミ募集中</p>
+          </div>
+        </div>
+
+        <!-- ▼ マスコットキャラクター（装飾） -->
+        <div class="reviews-character" aria-hidden="true">
+          <div class="character character--small">
+            <div class="character__body">
+              <div class="character__eye character__eye--l"></div>
+              <div class="character__eye character__eye--r"></div>
+              <div class="character__mouth"></div>
+            </div>
+            <div class="character__leg character__leg--1"></div>
+            <div class="character__leg character__leg--2"></div>
+            <div class="character__cord"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         ⑧ NEWSセクション（エメラルドグリーン）
+         ============================================== -->
+    <section id="news" class="section section--news">
+      <div class="section__inner">
+
+        <div class="section-bg-word" aria-hidden="true">NEWS</div>
+
+        <h2 class="section-title section-title--white">お知らせ</h2>
+
+        <!-- ▼ ニュースリスト（CMSで差し替えやすい構造にしてある） -->
+        <ul class="news-list">
+          <li class="news-item">
+            <button class="news-item__inner" id="news-2025-07-01">
+              <time datetime="2025-07-01" class="news-item__date">2025.07.01</time>
+              <span class="news-item__title">Webサイトをリニューアルしました</span>
+            </button>
+          </li>
+          <li class="news-item">
+            <button class="news-item__inner" id="news-2024-11-01">
+              <time datetime="2024-11-01" class="news-item__date">2024.11.01</time>
+              <span class="news-item__title">電子工作オンラインコースの受付を開始しました</span>
+            </button>
+          </li>
+          <li class="news-item">
+            <button class="news-item__inner" id="news-2024-11-01b">
+              <time datetime="2024-11-01" class="news-item__date">2024.11.01</time>
+              <span class="news-item__title">電子工作オンラインコースの受付を開始しました</span>
+            </button>
+          </li>
+        </ul>
+
+        <!-- ▼ ニュース一覧リンク（ヘッダーバー風のデザイン） -->
+        <div class="news-footer-bar">
+          <div class="site-logo site-logo--small">
+            <div class="site-logo__left">
+              <span class="site-logo__mono">モノ</span>
+              <span class="site-logo__koto">コト</span>
+            </div>
+            <div class="site-logo__right">
+              <span class="site-logo__monokoto">MONOKOTO</span>
+              <span class="site-logo__lab">LAB.</span>
+            </div>
+          </div>
+          <a href="#" class="news-more-link">ニュース一覧 →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         お問い合わせセクション（シンプルフォーム）
+         ▼ 実運用ではFormspreeやmicrocmsなどのサービスと連携
+         ============================================== -->
+    <section id="contact" class="section section--contact">
+      <div class="section__inner">
+        <h2 class="section-title section-title--center">お問い合わせ</h2>
+        <p class="section-text-center">
+          体験・カリキュラム・料金についてのご質問はお気軽にお問い合わせください。
+        </p>
+
+        <form class="contact-form" action="#" method="post">
+          <div class="contact-form__row">
+            <label for="contact-name">お名前 <span class="required">必須</span></label>
+            <input type="text" id="contact-name" name="name" required placeholder="例：田中 太郎" />
+          </div>
+          <div class="contact-form__row">
+            <label for="contact-email">メールアドレス <span class="required">必須</span></label>
+            <input type="email" id="contact-email" name="email" required placeholder="例：example@mail.com" />
+          </div>
+          <div class="contact-form__row">
+            <label for="contact-child">お子さまの学年・年齢</label>
+            <input type="text" id="contact-child" name="child_age" placeholder="例：小学3年生（9歳）" />
+          </div>
+          <div class="contact-form__row">
+            <label for="contact-message">お問い合わせ内容 <span class="required">必須</span></label>
+            <textarea id="contact-message" name="message" rows="6" required placeholder="ご質問・ご要望をご記入ください。"></textarea>
+          </div>
+          <div class="contact-form__actions">
+            <button type="submit" class="submit-btn">送信する</button>
+          </div>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================================
+       フッター
+       ============================================== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+
+      <!-- ▼ フッターナビゲーション（クライアントごとにリンク先変更） -->
+      <nav class="footer-nav" aria-label="フッターナビゲーション">
+        <ul class="footer-nav__main">
+          <li><a href="#top">ホーム</a></li>
+          <li><a href="#curriculum">スターターキット</a></li>
+          <li><a href="#curriculum">カリキュラム</a></li>
+          <li><a href="#option">オプション</a></li>
+        </ul>
+        <ul class="footer-nav__sub">
+          <li><a href="#news">新着情報</a></li>
+          <li><a href="#">会社概要</a></li>
+          <li><a href="#">個人情報保護方針</a></li>
+          <li><a href="#">特定商取引に基づく表記</a></li>
+        </ul>
+        <ul class="footer-nav__contact">
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <!-- ▼ フッターロゴ + コピーライト -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo__left">
+            <span class="footer-logo__mono">モノ</span>
+            <span class="footer-logo__koto">コト</span>
+          </div>
+          <div class="footer-logo__right">
+            <span class="footer-logo__monokoto">MONOKOTO</span>
+            <span class="footer-logo__lab">LAB.</span>
+          </div>
+        </div>
+        <small class="footer-copy">Copyright ©︎ 2024 monokotolab.co.jp. All Rights Reserved.</small>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

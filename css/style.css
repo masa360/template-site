@@ -577,6 +577,56 @@ body {
   margin-top: 1px;
 }
 
+/* school-lp7（モノコトLab.） */
+.tpl-preview-school-lp7 {
+  background: linear-gradient(165deg, #0d4a3a 0%, #0a3d30 50%, #064336 100%);
+  padding: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center;
+  min-height: 120px;
+  position: relative;
+}
+.tpl-preview-school-lp7 .mock-hero-circuit {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 8px,
+    rgba(255,255,255,.04) 8px,
+    rgba(255,255,255,.04) 9px
+  );
+  border-radius: inherit;
+  pointer-events: none;
+}
+.tpl-preview-school-lp7 .mock-hero-sub {
+  position: relative;
+  height: 5px;
+  width: 70%;
+  margin: 0 auto;
+  background: rgba(255,255,255,.6);
+  border-radius: 2px;
+}
+.tpl-preview-school-lp7 .mock-hero-logo {
+  position: relative;
+  height: 18px;
+  width: 80%;
+  margin: 0 auto;
+  background: rgba(255,255,255,.9);
+  border-radius: 3px;
+}
+.tpl-preview-school-lp7 .mock-hero-cta {
+  position: relative;
+  height: 24px;
+  width: 65%;
+  margin: 0.25rem auto 0;
+  background: rgba(255,255,255,.25);
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 20px;
+}
+
 /* school-lp8（習い事教室） */
 .tpl-preview-school-lp8 {
   background: linear-gradient(180deg, #2a3a4a 0%, #1a2530 100%);
