@@ -28,7 +28,9 @@
     insyoku: [
       { num: 5,  name: 'ゆうカフェ', style: 'insyoku', path: 'templates/insyoku/index.html' }
     ],
-    school: [],
+    school: [
+      { num: 8, name: '習い事教室', style: 'school-lp8', path: 'templates/school-lp8/index.html' }
+    ],
     taiken: [
       { num: 1,  name: 'nebane', style: 'taiken', path: 'templates/taiken/index.html' }
     ]
@@ -252,7 +254,7 @@
   ════════════════════════════════════════ */
   function buildDemoUrl(path, genre) {
     /* 固定コンテンツのサンプルLPはパラメータ不要 */
-    if (path.indexOf('biyou/index.html') !== -1 || path.indexOf('biyou-doodle/index.html') !== -1 || path.indexOf('biyou-longleage/index.html') !== -1 || path.indexOf('butuhan/index.html') !== -1 || path.indexOf('insyoku/index.html') !== -1 || path.indexOf('taiken/index.html') !== -1) return path;
+    if (path.indexOf('biyou/index.html') !== -1 || path.indexOf('biyou-doodle/index.html') !== -1 || path.indexOf('biyou-longleage/index.html') !== -1 || path.indexOf('butuhan/index.html') !== -1 || path.indexOf('insyoku/index.html') !== -1 || path.indexOf('taiken/index.html') !== -1 || path.indexOf('school-lp8/index.html') !== -1) return path;
     var d = DEMO[genre] || DEMO.butuhan;
     var p = new URLSearchParams();
     p.set('catch',   d.catch);
@@ -316,6 +318,14 @@
         + '<div class="mock-hero-title"></div>'
         + '<div class="mock-hero-btns"></div>'
         + '<div class="mock-salon-row"></div>'
+        + '</div>';
+    }
+    if (style === 'school-lp8') {
+      return '<div class="tpl-preview tpl-preview-school-lp8">'
+        + '<div class="mock-hero-bg"></div>'
+        + '<div class="mock-hero-sub"></div>'
+        + '<div class="mock-hero-ttl"></div>'
+        + '<div class="mock-hero-cta"></div>'
         + '</div>';
     }
     if (style === 'A') {

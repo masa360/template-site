@@ -577,6 +577,47 @@ body {
   margin-top: 1px;
 }
 
+/* school-lp8（習い事教室） */
+.tpl-preview-school-lp8 {
+  background: linear-gradient(180deg, #2a3a4a 0%, #1a2530 100%);
+  padding: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: flex-end;
+  min-height: 120px;
+  position: relative;
+}
+.tpl-preview-school-lp8 .mock-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.5) 0%, transparent 50%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.tpl-preview-school-lp8 .mock-hero-sub {
+  position: relative;
+  height: 5px;
+  width: 55%;
+  background: rgba(255,255,255,.5);
+  border-radius: 2px;
+}
+.tpl-preview-school-lp8 .mock-hero-ttl {
+  position: relative;
+  height: 12px;
+  width: 90%;
+  background: rgba(255,255,255,.9);
+  border-radius: 3px;
+}
+.tpl-preview-school-lp8 .mock-hero-cta {
+  position: relative;
+  height: 22px;
+  width: 58%;
+  background: #e8b84a;
+  border-radius: 6px;
+  margin-top: 2px;
+}
+
 /* カードフッター */
 .tpl-foot {
   padding: 0.5rem 0.7rem;

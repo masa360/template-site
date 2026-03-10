@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ▼ SEO: タイトルとディスクリプションを教室名に合わせて変更してください -->
+  <title>【教室名】｜〇〇・△△・□□の習い事教室</title>
+  <meta name="description" content="【教室名】は〇〇地域で展開する△△教室です。体験入学受付中！お気軽にお問い合わせください。" />
+  <meta name="keywords" content="習い事, 教室名, 地域名, 子ども" />
+  <meta property="og:title" content="【教室名】｜地域の習い事教室" />
+  <meta property="og:description" content="子どもたちと一緒に楽しく学ぼう！体験入学受付中。" />
+  <meta property="og:type" content="website" />
+  <!-- ▼ OGP画像パスを変更してください -->
+  <meta property="og:image" content="images/ogp.jpg" />
+  <link rel="canonical" href="https://your-domain.com/" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome (アイコン) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       緊急・重要バナー (お知らせがある場合のみ表示)
+  ============================================================ -->
+  <div class="notice-banner" id="noticeBanner">
+    <div class="notice-banner__inner">
+      <span class="notice-banner__label">重要なお知らせ</span>
+      <!-- ▼ お知らせ日付・テキストを変更してください -->
+      <span class="notice-banner__date">2026.03.06</span>
+      <a href="#" class="notice-banner__text">○○教室 時間変更のお知らせ</a>
+      <a href="#" class="notice-banner__link">詳しくはこちら →</a>
+    </div>
+    <button class="notice-banner__close" id="noticeBannerClose" aria-label="閉じる">×</button>
+  </div>
+
+  <!-- ============================================================
+       ヘッダー (共通ナビゲーション)
+  ============================================================ -->
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <!-- ▼ ロゴ画像またはテキストを変更してください -->
+      <a href="/" class="header__logo">
+        <span class="header__logo-text">【教室名】</span>
+      </a>
+
+      <div class="header__contact">
+        <!-- ▼ 電話番号を変更してください -->
+        <a href="tel:000-000-0000" class="header__tel">
+          <i class="fa-solid fa-phone"></i>
+          <span>000-000-0000</span>
+        </a>
+        <div class="header__cta-group">
+          <a href="#trial" class="btn btn--primary btn--sm">体験お申し込み</a>
+          <a href="#contact" class="btn btn--outline btn--sm">お問い合わせ</a>
+        </div>
+      </div>
+
+      <!-- ハンバーガーボタン (スマホ) -->
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- ナビゲーションメニュー -->
+    <nav class="nav" id="nav" aria-label="メインナビゲーション">
+      <ul class="nav__list container">
+        <!-- ▼ メニュー項目を教室に合わせて変更してください -->
+        <li class="nav__item"><a href="#about" class="nav__link">【教室名】とは</a></li>
+        <li class="nav__item"><a href="#course" class="nav__link">コース・料金</a></li>
+        <li class="nav__item"><a href="#school" class="nav__link">教室案内</a></li>
+        <li class="nav__item"><a href="#schedule" class="nav__link">スケジュール</a></li>
+        <li class="nav__item"><a href="#event" class="nav__link">イベント・大会</a></li>
+        <li class="nav__item"><a href="#faq" class="nav__link">よくある質問</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         ヒーローセクション (メインビジュアル)
+    ============================================================ -->
+    <section class="hero" id="hero">
+      <!-- ▼ 背景動画を使う場合はコメントを外してください -->
+      <!--
+      <video class="hero__video" autoplay muted loop playsinline>
+        <source src="images/hero.mp4" type="video/mp4" />
+      </video>
+      -->
+      <!-- ▼ 背景画像: images/hero.jpg を配置してください (推奨: 1920×1080px) -->
+      <div class="hero__bg"></div>
+      <div class="hero__overlay"></div>
+
+      <div class="hero__content container">
+        <!-- ▼ キャッチコピーを変更してください -->
+        <p class="hero__sub">いつでも体験入学受付中</p>
+        <h1 class="hero__title">
+          【教室名】の仲間と<br />
+          楽しく<em>〇〇</em>はじめよう！
+        </h1>
+        <p class="hero__desc">
+          <!-- ▼ サブキャッチを変更してください -->
+          子どもたちの「できた！」が輝く場所。<br />
+          地域最大規模の教室ネットワークで、通いやすさ抜群。
+        </p>
+        <div class="hero__cta">
+          <a href="#trial" class="btn btn--hero btn--primary">
+            <i class="fa-solid fa-calendar-check"></i>
+            無料体験に申し込む
+          </a>
+          <a href="#about" class="btn btn--hero btn--ghost">
+            <i class="fa-solid fa-circle-info"></i>
+            詳しく見る
+          </a>
+        </div>
+      </div>
+
+      <a href="#news" class="hero__scroll" aria-label="スクロール">
+        <span class="hero__scroll-text">scroll</span>
+        <span class="hero__scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- ============================================================
+         キャンペーンバナー
+    ============================================================ -->
+    <section class="campaign">
+      <div class="container">
+        <div class="campaign__inner">
+          <!-- ▼ キャンペーン情報を変更してください -->
+          <div class="campaign__badge">
+            <i class="fa-solid fa-star"></i> 期間限定
+          </div>
+          <p class="campaign__text">
+            <strong>春の特別キャンペーン実施中！</strong>
+            入会金無料 &amp; 初月授業料半額
+          </p>
+          <a href="#trial" class="btn btn--campaign">今すぐ申し込む →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         お知らせセクション
+    ============================================================ -->
+    <section class="news section" id="news">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">お知らせ</h2>
+          <a href="#" class="section-header__link">一覧を見る →</a>
+        </div>
+        <ul class="news__list">
+          <!-- ▼ お知らせ項目を追加・変更してください -->
+          <li class="news__item">
+            <span class="news__tag news__tag--campaign">キャンペーン</span>
+            <span class="news__date">2026.03.01</span>
+            <a href="#" class="news__title">春のキャンペーン開催中！入会金無料キャンペーン</a>
+          </li>
+          <li class="news__item">
+            <span class="news__tag news__tag--important">重要</span>
+            <span class="news__date">2026.02.20</span>
+            <a href="#" class="news__title">〇〇教室 春季スケジュール変更のお知らせ</a>
+          </li>
+          <li class="news__item">
+            <span class="news__tag news__tag--info">お知らせ</span>
+            <span class="news__date">2026.02.05</span>
+            <a href="#" class="news__title">春の特別講習のお知らせ（3月・4月開催）</a>
+          </li>
+          <li class="news__item">
+            <span class="news__tag news__tag--info">お知らせ</span>
+            <span class="news__date">2026.01.15</span>
+            <a href="#" class="news__title">第〇回 〇〇検定 開催日程のお知らせ</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         教室紹介セクション (About)
+    ============================================================ -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <!-- ▼ セクションタイトルを変更してください -->
+          <p class="section-label">ABOUT US</p>
+          <h2 class="section-title">【教室名】とは</h2>
+        </div>
+
+        <div class="about__content">
+          <div class="about__text">
+            <!-- ▼ 教室紹介文を変更してください -->
+            <p class="about__lead">
+              ベトナムでも開講中！<br />
+              ここにも、【教室名】！？
+            </p>
+            <h3 class="about__subtitle">
+              圧倒的な教室数で、通いやすい！
+            </h3>
+            <p>
+              【教室名】は、〇〇地域に約50教室を構える関西最大規模の習い事教室です。
+              神戸・西宮・宝塚・茨木はもちろん吹田・芦屋等にも教室を開校しています。
+            </p>
+            <p>
+              ご自宅から教室が近いと、送り迎えも楽々便利。
+              ご自宅から通いやすい「【教室名】」を探してみませんか？
+            </p>
+            <a href="#school" class="btn btn--primary">教室案内を見る →</a>
+          </div>
+          <div class="about__image">
+            <!-- ▼ 教室の画像を配置してください (推奨: 600×400px) -->
+            <div class="about__image-placeholder">
+              <i class="fa-solid fa-school"></i>
+              <span>教室の写真</span>
+            </div>
+            <div class="about__stats">
+              <div class="about__stat">
+                <span class="about__stat-num">50<small>+</small></span>
+                <span class="about__stat-label">教室数</span>
+              </div>
+              <div class="about__stat">
+                <!-- ▼ 実績数値を変更してください -->
+                <span class="about__stat-num">1,200<small>+</small></span>
+                <span class="about__stat-label">在籍生徒数</span>
+              </div>
+              <div class="about__stat">
+                <span class="about__stat-num">15<small>年</small></span>
+                <span class="about__stat-label">の実績</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- なぜ〇〇？ -->
+        <div class="why section__inner-block">
+          <div class="section-header section-header--center">
+            <p class="section-label">WHY</p>
+            <!-- ▼ 「なぜ〇〇？」の見出しを変更してください -->
+            <h2 class="section-title">「〇〇」は、やる気を育てる<br />魔法のアイテム！</h2>
+          </div>
+          <div class="why__grid">
+            <div class="why__card">
+              <div class="why__icon">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <!-- ▼ 理由・メリットを変更してください -->
+              <h3 class="why__title">なぜ、〇〇？</h3>
+              <p class="why__text">
+                パソコンやスマホがあふれる現代、「なぜ、〇〇？」と思う方も多いでしょう。
+                答えは簡単。〇〇は「単純な道具」ではなく、
+                右脳を活性化させる「脳を鍛える能力開発の道具」として見直されているからなんです。
+              </p>
+            </div>
+            <div class="why__card">
+              <div class="why__icon">
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+              <h3 class="why__title">なぜ、右脳が活性化するの？</h3>
+              <p class="why__text">
+                通常の学習では左脳を使いますが、〇〇教育では「頭の中でイメージして学習」することで
+                右脳が反応し、集中力・忍耐力・記憶力がアップする仕組みなのです。
+                結果、子どもたちのやる気と学習力が向上します。
+              </p>
+            </div>
+            <div class="why__card">
+              <div class="why__icon">
+                <i class="fa-solid fa-book-open"></i>
+              </div>
+              <h3 class="why__title">オリジナル教材を積極的に導入！</h3>
+              <p class="why__text">
+                お子さまの年齢やレベルに応じて自主的に学習できるように、
+                様々なオリジナル教材を用意しています。
+                楽しく学べることが大切です。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         特徴セクション (Features)
+    ============================================================ -->
+    <section class="features section section--gray" id="features">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <p class="section-label">FEATURES</p>
+          <!-- ▼ 見出しを変更してください -->
+          <h2 class="section-title">【教室名】の特徴</h2>
+        </div>
+        <div class="features__grid">
+          <!-- ▼ 特徴カードを教室に合わせて変更してください (6つが理想) -->
+          <div class="feature-card" data-index="01">
+            <div class="feature-card__icon">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <h3 class="feature-card__title">目標は上位級！<br />検定試験合格が目標</h3>
+            <p class="feature-card__text">
+              各種検定試験の他に複数の試験にもチャレンジ可能！
+              3級以上を目指しましょう。
+            </p>
+            <a href="#course" class="feature-card__link">詳しく見る →</a>
+          </div>
+
+          <div class="feature-card" data-index="02">
+            <div class="feature-card__icon">
+              <i class="fa-solid fa-calendar-days"></i>
+            </div>
+            <h3 class="feature-card__title">週1回～無制限<br />授業回数を選択</h3>
+            <p class="feature-card__text">
+              授業回数は自由に選択できます。
+              3級以上を目指すためには週2回以上をお勧めします。
+            </p>
+            <a href="#course" class="feature-card__link">コース・料金案内へ →</a>
+          </div>
+
+          <div class="feature-card" data-index="03">
+            <div class="feature-card__icon">
+              <i class="fa-solid fa-arrows-rotate"></i>
+            </div>
+            <h3 class="feature-card__title">欠席しても<br />他教室で振替</h3>
+            <p class="feature-card__text">
+              お休みしても、月2回まで他の教室で振替授業が受けられます。
+            </p>
+            <a href="#school" class="feature-card__link">教室案内へ →</a>
+          </div>
+
+          <div class="feature-card" data-index="04">
+            <div class="feature-card__icon">
+              <i class="fa-solid fa-book"></i>
+            </div>
+            <h3 class="feature-card__title">レベルに応じた<br />オリジナル教材</h3>
+            <p class="feature-card__text">
+              基礎から上位級まで、生徒のレベルに応じたオリジナル教材を選択できるので安心です。
+            </p>
+            <a href="#course" class="feature-card__link">コース案内へ →</a>
+          </div>
+
+          <div class="feature-card" data-index="05">
+            <div class="feature-card__icon">
+              <i class="fa-solid fa-head-side-brain"></i>
+            </div>
+            <h3 class="feature-card__title">暗算への<br />意欲的な取り組み</h3>
+            <p class="feature-card__text">
+              暗算力の強化を重要な目標としており、積極的にカリキュラムに取り込んでいます。
+            </p>
+            <a href="#course" class="feature-card__link">コース案内へ →</a>
+          </div>
+
+          <div class="feature-card" data-index="06">
+            <div class="feature-card__icon">
+              <i class="fa-solid fa-medal"></i>
+            </div>
+            <h3 class="feature-card__title">大会・イベントに<br />チャレンジ！</h3>
+            <p class="feature-card__text">
+              独自の競技大会を毎年開催しています。大勢の仲間と競い合ってみませんか？
+            </p>
+            <a href="#event" class="feature-card__link">大会情報へ →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         コース・料金セクション
+    ============================================================ -->
+    <section class="course section" id="course">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <p class="section-label">COURSE &amp; PRICE</p>
+          <h2 class="section-title">コース・料金</h2>
+          <p class="section-desc">
+            <!-- ▼ コース説明文を変更してください -->
+            4つのコースから選択できます。<br />
+            3級以上を目指すなら、週2回以上をお勧めします。
+          </p>
+        </div>
+
+        <!-- コース一覧 -->
+        <div class="course__grid">
+          <!-- ▼ 各コース情報を変更してください -->
+          <div class="course-card">
+            <div class="course-card__header">
+              <span class="course-card__badge">人気</span>
+              <h3 class="course-card__name">週2回コース</h3>
+              <p class="course-card__sub">着実に力をつけたい方へ</p>
+            </div>
+            <div class="course-card__price">
+              <span class="course-card__amount">7,000</span>
+              <span class="course-card__unit">円/月（税込）</span>
+            </div>
+            <ul class="course-card__features">
+              <li><i class="fa-solid fa-check"></i> 週2日・各1時間授業</li>
+              <li><i class="fa-solid fa-check"></i> 同日2時間連続も可</li>
+              <li><i class="fa-solid fa-check"></i> 月2回振替可能</li>
+            </ul>
+            <a href="#trial" class="btn btn--primary btn--full">体験する →</a>
+          </div>
+
+          <div class="course-card course-card--recommended">
+            <div class="course-card__header">
+              <span class="course-card__badge course-card__badge--hot">おすすめ</span>
+              <h3 class="course-card__name">週3回コース</h3>
+              <p class="course-card__sub">早期上達を目指す方へ</p>
+            </div>
+            <div class="course-card__price">
+              <span class="course-card__amount">8,000</span>
+              <span class="course-card__unit">円/月（税込）</span>
+            </div>
+            <ul class="course-card__features">
+              <li><i class="fa-solid fa-check"></i> 週3日の受講</li>
+              <li><i class="fa-solid fa-check"></i> 効率的な上位級進級</li>
+              <li><i class="fa-solid fa-check"></i> 月2回振替可能</li>
+            </ul>
+            <a href="#trial" class="btn btn--primary btn--full">体験する →</a>
+          </div>
+
+          <div class="course-card">
+            <div class="course-card__header">
+              <h3 class="course-card__name">無制限コース</h3>
+              <p class="course-card__sub">1級以上合格を目指す方へ</p>
+            </div>
+            <div class="course-card__price">
+              <span class="course-card__amount">8,500</span>
+              <span class="course-card__unit">円/月（税込）</span>
+            </div>
+            <ul class="course-card__features">
+              <li><i class="fa-solid fa-check"></i> 週4回以上の受講</li>
+              <li><i class="fa-solid fa-check"></i> 受講回数制限なし</li>
+              <li><i class="fa-solid fa-times"></i> 振替なし（同教室のみ）</li>
+            </ul>
+            <a href="#trial" class="btn btn--primary btn--full">体験する →</a>
+          </div>
+
+          <div class="course-card">
+            <div class="course-card__header">
+              <h3 class="course-card__name">週1回コース</h3>
+              <p class="course-card__sub">まずはゆっくり始めたい方へ</p>
+            </div>
+            <div class="course-card__price">
+              <span class="course-card__amount">5,800</span>
+              <span class="course-card__unit">円/月（税込）</span>
+            </div>
+            <ul class="course-card__features">
+              <li><i class="fa-solid fa-check"></i> 週1日・1時間授業</li>
+              <li><i class="fa-solid fa-check"></i> 特別事情の方向け</li>
+              <li><i class="fa-solid fa-check"></i> 月2回振替可能</li>
+            </ul>
+            <a href="#trial" class="btn btn--primary btn--full">体験する →</a>
+          </div>
+        </div>
+
+        <!-- 費用詳細 -->
+        <div class="fee-table">
+          <h3 class="fee-table__title">その他の費用</h3>
+          <table>
+            <tbody>
+              <tr>
+                <th>入会金</th>
+                <td>5,500円（税込）<br /><small>※2人目以降は半額</small></td>
+              </tr>
+              <tr>
+                <th>教材費</th>
+                <td>月額 600円（税込）<br /><small>※コースに関係なく定額制</small></td>
+              </tr>
+              <tr>
+                <th>諸経費</th>
+                <td>3,000円（税込）/ 6ヶ月<br /><small>※冷暖房費・プリント代等。2月末・8月末に6ヶ月分まとめてお支払い</small></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         体験の流れセクション (Trial Flow)
+    ============================================================ -->
+    <section class="trial section section--primary" id="trial">
+      <div class="container">
+        <div class="section-header section-header--center section-header--white">
+          <p class="section-label">TRIAL</p>
+          <h2 class="section-title">体験入学の流れ</h2>
+          <p class="section-desc">
+            <!-- ▼ 体験授業の説明を変更してください -->
+            ワンコイン500円で体験授業ができます！<br />まずはお気軽にお問い合わせください。
+          </p>
+        </div>
+        <div class="trial__steps">
+          <div class="trial__step">
+            <div class="trial__step-num">01</div>
+            <div class="trial__step-icon"><i class="fa-solid fa-phone"></i></div>
+            <h3 class="trial__step-title">お電話・お問い合わせ</h3>
+            <p class="trial__step-text">
+              電話またはお問い合わせフォームから体験授業をお申込みください。
+            </p>
+          </div>
+          <div class="trial__step-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+          <div class="trial__step">
+            <div class="trial__step-num">02</div>
+            <div class="trial__step-icon"><i class="fa-solid fa-school"></i></div>
+            <h3 class="trial__step-title">体験授業（約40分）</h3>
+            <p class="trial__step-text">
+              各教室の授業時間に実施。時間は約40分です。体験後、最後の10分間は保護者様も見学できます。
+            </p>
+          </div>
+          <div class="trial__step-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+          <div class="trial__step">
+            <div class="trial__step-num">03</div>
+            <div class="trial__step-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+            <h3 class="trial__step-title">ご入会</h3>
+            <p class="trial__step-text">
+              体験授業の後、いつからでもご入会いただけます。
+              入会した月の授業料は日割り計算です。
+            </p>
+          </div>
+          <div class="trial__step-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+          <div class="trial__step">
+            <div class="trial__step-num">04</div>
+            <div class="trial__step-icon"><i class="fa-solid fa-gift"></i></div>
+            <h3 class="trial__step-title">オリジナルバッグを<br />プレゼント！</h3>
+            <p class="trial__step-text">
+              入会後、オリジナルバッグをプレゼントさせていただきます。
+            </p>
+          </div>
+        </div>
+
+        <div class="trial__cta">
+          <a href="tel:000-000-0000" class="btn btn--white btn--lg">
+            <i class="fa-solid fa-phone"></i> 000-000-0000 に電話する
+          </a>
+          <a href="#contact" class="btn btn--ghost-white btn--lg">
+            <i class="fa-solid fa-envelope"></i> お問い合わせフォームへ
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         教室案内セクション
+    ============================================================ -->
+    <section class="school section" id="school">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <p class="section-label">SCHOOLS</p>
+          <h2 class="section-title">教室案内</h2>
+          <p class="section-desc">全国〇〇教室、お近くの教室を探してみてください。</p>
+        </div>
+
+        <!-- エリアタブ -->
+        <div class="tabs" role="tablist">
+          <!-- ▼ エリア名を変更してください -->
+          <button class="tab tab--active" data-area="area1" role="tab" aria-selected="true">神戸市</button>
+          <button class="tab" data-area="area2" role="tab" aria-selected="false">西宮・芦屋</button>
+          <button class="tab" data-area="area3" role="tab" aria-selected="false">宝塚・伊丹</button>
+          <button class="tab" data-area="area4" role="tab" aria-selected="false">大阪エリア</button>
+        </div>
+
+        <div class="school__area" id="area1">
+          <div class="school__grid">
+            <!-- ▼ 教室情報を変更してください -->
+            <div class="school-card">
+              <h3 class="school-card__name">〇〇駅前教室</h3>
+              <p class="school-card__access">
+                <i class="fa-solid fa-train"></i>
+                〇〇線 〇〇駅 北口すぐ
+              </p>
+              <p class="school-card__schedule">
+                <i class="fa-regular fa-clock"></i>
+                月・水・金 15:00〜19:00
+              </p>
+              <a href="#" class="school-card__link">詳しく見る →</a>
+            </div>
+            <div class="school-card">
+              <h3 class="school-card__name">△△教室</h3>
+              <p class="school-card__access">
+                <i class="fa-solid fa-train"></i>
+                〇〇線 △△駅 東口徒歩3分
+              </p>
+              <p class="school-card__schedule">
+                <i class="fa-regular fa-clock"></i>
+                火・木・土 15:00〜19:00
+              </p>
+              <a href="#" class="school-card__link">詳しく見る →</a>
+            </div>
+            <div class="school-card">
+              <h3 class="school-card__name">□□教室</h3>
+              <p class="school-card__access">
+                <i class="fa-solid fa-train"></i>
+                〇〇線 □□駅 南側
+              </p>
+              <p class="school-card__schedule">
+                <i class="fa-regular fa-clock"></i>
+                月・木 15:00〜19:00
+              </p>
+              <a href="#" class="school-card__link">詳しく見る →</a>
+            </div>
+          </div>
+        </div>
+        <div class="school__area school__area--hidden" id="area2">
+          <div class="school__grid">
+            <div class="school-card">
+              <h3 class="school-card__name">西宮北口教室</h3>
+              <p class="school-card__access">
+                <i class="fa-solid fa-train"></i>
+                阪急 西宮北口駅 北東側
+              </p>
+              <p class="school-card__schedule">
+                <i class="fa-regular fa-clock"></i>
+                月・水・金 15:00〜19:00
+              </p>
+              <a href="#" class="school-card__link">詳しく見る →</a>
+            </div>
+          </div>
+        </div>
+        <div class="school__area school__area--hidden" id="area3">
+          <div class="school__grid">
+            <div class="school-card">
+              <h3 class="school-card__name">宝塚駅前教室</h3>
+              <p class="school-card__access">
+                <i class="fa-solid fa-train"></i>
+                阪急宝塚駅 東側
+              </p>
+              <p class="school-card__schedule">
+                <i class="fa-regular fa-clock"></i>
+                火・木・土 15:00〜19:00
+              </p>
+              <a href="#" class="school-card__link">詳しく見る →</a>
+            </div>
+          </div>
+        </div>
+        <div class="school__area school__area--hidden" id="area4">
+          <div class="school__grid">
+            <div class="school-card">
+              <h3 class="school-card__name">吹田教室</h3>
+              <p class="school-card__access">
+                <i class="fa-solid fa-train"></i>
+                JR吹田駅 北側
+              </p>
+              <p class="school-card__schedule">
+                <i class="fa-regular fa-clock"></i>
+                月・水・金 15:00〜19:00
+              </p>
+              <a href="#" class="school-card__link">詳しく見る →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         生徒・保護者の声セクション
+    ============================================================ -->
+    <section class="testimonials section section--gray" id="testimonials">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <p class="section-label">VOICE</p>
+          <h2 class="section-title">皆さんの声</h2>
+          <p class="section-desc">教室を利用されている生徒・保護者の方々からの声をご紹介します。</p>
+        </div>
+        <div class="testimonials__grid">
+          <!-- ▼ 口コミ・感想を変更してください -->
+          <div class="testimonial-card">
+            <div class="testimonial-card__stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-card__text">
+              「入会して半年で〇〇検定3級に合格しました！先生がとても丁寧で、子どもも楽しく通っています。」
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div>
+                <p class="testimonial-card__name">小学3年生 保護者様</p>
+                <p class="testimonial-card__area">〇〇教室 通学</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-card__stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-card__text">
+              「算数が苦手だった子が、通い始めてから計算が大好きになりました。振替制度があるので、習い事が多くても通いやすいです。」
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div>
+                <p class="testimonial-card__name">小学2年生 保護者様</p>
+                <p class="testimonial-card__area">△△教室 通学</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-card__stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <p class="testimonial-card__text">
+              「教室がたくさんあるので、引越し後も継続できました。先生が変わっても授業の質が高いのが魅力です。」
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div>
+                <p class="testimonial-card__name">小学5年生 保護者様</p>
+                <p class="testimonial-card__area">□□教室 通学</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         よくある質問セクション
+    ============================================================ -->
+    <section class="faq section" id="faq">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <p class="section-label">FAQ</p>
+          <h2 class="section-title">よくある質問</h2>
+        </div>
+        <div class="faq__list">
+          <!-- ▼ Q&Aを変更してください -->
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              <span><i class="faq__q-icon">Q</i>何歳から入会できますか？</span>
+              <i class="fa-solid fa-chevron-down faq__arrow"></i>
+            </button>
+            <div class="faq__answer" aria-hidden="true">
+              <p>
+                年長さん（5〜6歳）から入会可能です。お子さまの様子を見ながら、まずは体験授業にお越しください。
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              <span><i class="faq__q-icon">Q</i>体験授業はどのくらいかかりますか？</span>
+              <i class="fa-solid fa-chevron-down faq__arrow"></i>
+            </button>
+            <div class="faq__answer" aria-hidden="true">
+              <p>
+                体験授業は約40分です。ワンコイン（500円）でご参加いただけます。
+                最後の10分間は保護者の方も見学できます。
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              <span><i class="faq__q-icon">Q</i>道具（〇〇）は自分で用意が必要ですか？</span>
+              <i class="fa-solid fa-chevron-down faq__arrow"></i>
+            </button>
+            <div class="faq__answer" aria-hidden="true">
+              <p>
+                体験授業中は教室の道具をお貸しします。
+                入会後は教室でご購入いただくか、指定のものをご自身でご用意ください。
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              <span><i class="faq__q-icon">Q</i>欠席した場合、授業料は返金されますか？</span>
+              <i class="fa-solid fa-chevron-down faq__arrow"></i>
+            </button>
+            <div class="faq__answer" aria-hidden="true">
+              <p>
+                授業料の返金はございませんが、月2回まで他の教室での振替授業が可能です。
+                欠席の際は必ずLINE公式アカウントまたはお電話でご連絡ください。
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              <span><i class="faq__q-icon">Q</i>台風や大雨の日も授業はありますか？</span>
+              <i class="fa-solid fa-chevron-down faq__arrow"></i>
+            </button>
+            <div class="faq__answer" aria-hidden="true">
+              <p>
+                台風や大雨で警報が出ても、原則として授業は実施しますが、ご家庭の判断でお休みして振替いただいて結構です。
+                休校の場合はホームページのトップページにてお知らせします。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         講師募集セクション (Recruitment)
+    ============================================================ -->
+    <section class="recruit section section--dark" id="recruit">
+      <div class="container">
+        <div class="recruit__inner">
+          <div class="recruit__text">
+            <p class="section-label section-label--white">RECRUIT</p>
+            <h2 class="recruit__title">私たちと一緒に<br />働きませんか？</h2>
+            <p class="recruit__desc">
+              <!-- ▼ 募集条件を変更してください -->
+              「〇〇検定の資格を持っている」「子どもが好き」という方、ぜひ講師として、
+              私たちと一緒に〇〇の楽しさを伝えてみませんか？
+            </p>
+            <a href="#" class="btn btn--white btn--lg">詳しくはこちら →</a>
+          </div>
+          <div class="recruit__image">
+            <div class="recruit__image-placeholder">
+              <i class="fa-solid fa-people-group"></i>
+              <span>スタッフの写真</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         お問い合わせセクション (Contact)
+    ============================================================ -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <p class="section-label">CONTACT</p>
+          <h2 class="section-title">お問い合わせ</h2>
+          <p class="section-desc">
+            ご不明な点はお気軽にお問い合わせください。<br />
+            <!-- ▼ 営業時間を変更してください -->
+            営業時間：平日 10:00〜18:00 / 土曜は授業のみ（電話受付なし）/ 日・祝 完全休業
+          </p>
+        </div>
+
+        <div class="contact__inner">
+          <!-- 電話 -->
+          <div class="contact__tel-box">
+            <i class="fa-solid fa-phone contact__tel-icon"></i>
+            <!-- ▼ 電話番号を変更してください -->
+            <a href="tel:000-000-0000" class="contact__tel-number">000-000-0000</a>
+            <p class="contact__tel-hours">平日 10:00〜18:00</p>
+          </div>
+
+          <!-- お問い合わせフォーム -->
+          <form class="contact__form" id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="name" class="form-label">お名前 <span class="required">必須</span></label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="山田 太郎" required autocomplete="name" />
+              <p class="form-error" id="nameError" aria-live="polite"></p>
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">メールアドレス <span class="required">必須</span></label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="example@email.com" required autocomplete="email" />
+              <p class="form-error" id="emailError" aria-live="polite"></p>
+            </div>
+            <div class="form-group">
+              <label for="tel" class="form-label">電話番号</label>
+              <input type="tel" id="tel" name="tel" class="form-input" placeholder="000-0000-0000" autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label for="area" class="form-label">お近くのエリア</label>
+              <select id="area" name="area" class="form-select">
+                <option value="">選択してください</option>
+                <!-- ▼ エリア・教室一覧を変更してください -->
+                <option value="kobe">神戸市</option>
+                <option value="nishinomiya">西宮・芦屋</option>
+                <option value="takarazuka">宝塚・伊丹</option>
+                <option value="osaka">大阪エリア</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-label">お問い合わせ内容 <span class="required">必須</span></label>
+              <textarea id="message" name="message" class="form-textarea" placeholder="体験授業の申し込み、その他お気軽にどうぞ。" rows="5" required></textarea>
+              <p class="form-error" id="messageError" aria-live="polite"></p>
+            </div>
+            <div class="form-group form-group--checkbox">
+              <label class="form-checkbox">
+                <input type="checkbox" id="privacy" name="privacy" required />
+                <span><a href="#" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>に同意します</span>
+              </label>
+              <p class="form-error" id="privacyError" aria-live="polite"></p>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full btn--lg">
+              送信する <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       フッター
+  ============================================================ -->
+  <footer class="footer">
+    <div class="footer__main container">
+      <div class="footer__brand">
+        <!-- ▼ フッターロゴ・教室名を変更してください -->
+        <div class="footer__logo">【教室名】</div>
+        <p class="footer__tagline">子どもたちの可能性を広げる習い事教室</p>
+        <address class="footer__address">
+          <!-- ▼ 住所を変更してください -->
+          〒000-0000 〇〇県〇〇市〇〇町0-0-0<br />
+          〇〇ビル 0F
+        </address>
+        <div class="footer__social">
+          <!-- ▼ SNSリンクを変更してください -->
+          <a href="#" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="#" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="#" class="footer__social-link" aria-label="LINE" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-line"></i>
+          </a>
+          <a href="#" class="footer__social-link" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer__nav" aria-label="フッターナビゲーション">
+        <div class="footer__nav-col">
+          <h3 class="footer__nav-title">教室について</h3>
+          <ul>
+            <li><a href="#about">【教室名】とは</a></li>
+            <li><a href="#features">教室の特徴</a></li>
+            <li><a href="#school">教室案内</a></li>
+            <li><a href="#schedule">スケジュール</a></li>
+          </ul>
+        </div>
+        <div class="footer__nav-col">
+          <h3 class="footer__nav-title">入会について</h3>
+          <ul>
+            <li><a href="#course">コース・料金</a></li>
+            <li><a href="#trial">体験入学</a></li>
+            <li><a href="#faq">よくある質問</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div class="footer__nav-col">
+          <h3 class="footer__nav-title">関連リンク</h3>
+          <ul>
+            <!-- ▼ 関連リンクを変更してください -->
+            <li><a href="#" target="_blank" rel="noopener noreferrer">グループ関連教室</a></li>
+            <li><a href="#recruit">講師募集</a></li>
+            <li><a href="#">サイトポリシー</a></li>
+            <li><a href="#">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p class="footer__tel">
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:000-000-0000">000-000-0000</a>
+          <span>平日 10:00〜18:00（土日祝休）</span>
+        </p>
+        <!-- ▼ コピーライト表記を変更してください -->
+        <p class="footer__copy">© 2024-2026 【教室名】 All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 固定CTA (スマホ用フローティングボタン) -->
+  <div class="floating-cta" id="floatingCta">
+    <a href="tel:000-000-0000" class="floating-cta__btn floating-cta__btn--tel">
+      <i class="fa-solid fa-phone"></i>
+      <span>電話する</span>
+    </a>
+    <a href="#trial" class="floating-cta__btn floating-cta__btn--trial">
+      <i class="fa-solid fa-calendar-check"></i>
+      <span>体験申込</span>
+    </a>
+  </div>
+
+  <!-- トップへ戻るボタン -->
+  <button class="back-to-top" id="backToTop" aria-label="トップへ戻る">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
