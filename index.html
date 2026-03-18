@@ -21,55 +21,14 @@
       <p class="header-sub">番号を LINE で送るとテンプレートが届きます</p>
     </header>
 
-    <!-- ステップインジケーター -->
-    <div class="steps">
-      <div class="step active" id="step1">
-        <span class="step-num">1</span>
-        <span class="step-label">ジャンル</span>
-      </div>
-      <div class="step-line"></div>
-      <div class="step" id="step2">
-        <span class="step-num">2</span>
-        <span class="step-label">デザイン</span>
-      </div>
-      <div class="step-line"></div>
-      <div class="step" id="step3">
-        <span class="step-num">3</span>
-        <span class="step-label">LINE 送信</span>
-      </div>
-    </div>
-
-    <!-- ① ジャンル選択 -->
-    <section class="section" id="section-genre">
-      <p class="section-label">STEP 1 &nbsp;ジャンルを選んでください</p>
-      <div class="genre-row">
-        <button class="genre-btn" data-genre="butuhan">
-          <span class="genre-icon">🛒</span>
-          <span class="genre-label">物販</span>
-        </button>
-        <button class="genre-btn" data-genre="biyou">
-          <span class="genre-icon">✨</span>
-          <span class="genre-label">美容</span>
-        </button>
-        <button class="genre-btn" data-genre="insyoku">
-          <span class="genre-icon">☕</span>
-          <span class="genre-label">飲食</span>
-        </button>
-        <button class="genre-btn" data-genre="school">
-          <span class="genre-icon">📚</span>
-          <span class="genre-label">スクール</span>
-        </button>
-      </div>
-    </section>
-
-    <!-- ② スケルトン一覧（ジャンル選択後に表示） -->
-    <section class="section templates-wrap" id="templates-wrap" hidden>
-      <p class="section-label" id="templates-heading"></p>
+    <!-- テンプレート一覧 -->
+    <section class="section">
+      <p class="section-label">テンプレート一覧</p>
       <p class="templates-hint">タップするとサンプルを確認できます</p>
       <div class="templates-grid" id="templates-grid"></div>
     </section>
 
-    <!-- 外部ギャラリーからのカスタム依頼案内 -->
+    <!-- デザイン参照元 -->
     <section class="section section-note">
       <div class="note-card">
         <p class="note-source">
