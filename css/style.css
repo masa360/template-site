@@ -198,6 +198,14 @@ body {
   color: var(--text);
 }
 
+.note-source {
+  margin: 0;
+  font-size: 0.72rem;
+  color: var(--text-sub);
+  line-height: 1.6;
+  text-align: center;
+}
+
 .note-text {
   margin: 0;
 }
@@ -354,7 +362,8 @@ body {
 
 /* butuhan（珈琲と、ひだまり。） */
 .tpl-preview-butan {
-  background: linear-gradient(175deg, #1A1410 0%, #2C2218 100%);
+  background: linear-gradient(175deg, rgba(26,20,16,.82) 0%, rgba(44,34,24,.88) 100%),
+    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80') center/cover no-repeat;
   padding: 0.7rem;
   display: flex;
   flex-direction: column;
@@ -391,7 +400,8 @@ body {
 
 /* insyoku（ゆうカフェ） */
 .tpl-preview-insyoku {
-  background: #FAFAFA;
+  background: linear-gradient(175deg, rgba(255,255,255,.55) 0%, rgba(240,240,240,.62) 100%),
+    url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=400&q=80') center/cover no-repeat;
   padding: 0.7rem;
   display: flex;
   flex-direction: column;
@@ -422,7 +432,8 @@ body {
 
 /* doodle */
 .tpl-preview-doodle {
-  background: linear-gradient(175deg, #C4A090 0%, #B08070 40%, #E0D0C8 100%);
+  background: linear-gradient(175deg, rgba(196,160,144,.78) 0%, rgba(176,128,112,.82) 40%, rgba(224,208,200,.72) 100%),
+    url('https://images.unsplash.com/photo-1560869713-7d0a29430803?w=400&q=80') center/cover no-repeat;
   padding: 0.7rem;
   display: flex;
   flex-direction: column;
@@ -463,7 +474,8 @@ body {
   gap: 0;
   padding: 0;
   min-height: 120px;
-  background: linear-gradient(135deg, #FBE9EC 0%, #F0D8DC 50%, #F8F4F0 100%);
+  background: linear-gradient(135deg, rgba(251,233,236,.9) 0%, rgba(240,216,220,.88) 50%, rgba(248,244,245,.85) 100%),
+    url('https://images.unsplash.com/photo-1541643600914-78b084683702?w=400&q=80') center/cover no-repeat;
 }
 .tpl-preview-biyou .mock-split-left {
   padding: 0.6rem 0.5rem;
@@ -508,7 +520,8 @@ body {
 
 /* longleage（ネイルサロン） */
 .tpl-preview-longleage {
-  background: linear-gradient(175deg, #2C2520 0%, #1A1614 40%, #F7F4F0 100%);
+  background: linear-gradient(175deg, rgba(44,37,32,.85) 0%, rgba(26,22,20,.9) 40%, rgba(247,244,240,.75) 100%),
+    url('https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&q=80') center/cover no-repeat;
   padding: 0.6rem;
   display: flex;
   flex-direction: column;
@@ -548,7 +561,8 @@ body {
 
 /* school-lp7（モノコトLab.） */
 .tpl-preview-school-lp7 {
-  background: linear-gradient(165deg, #0d4a3a 0%, #0a3d30 50%, #064336 100%);
+  background: linear-gradient(165deg, rgba(13,74,58,.82) 0%, rgba(10,61,48,.86) 50%, rgba(6,67,54,.84) 100%),
+    url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&q=80') center/cover no-repeat;
   padding: 0.7rem;
   display: flex;
   flex-direction: column;
@@ -598,7 +612,8 @@ body {
 
 /* school-lp8（習い事教室） */
 .tpl-preview-school-lp8 {
-  background: linear-gradient(180deg, #2a3a4a 0%, #1a2530 100%);
+  background: linear-gradient(180deg, rgba(42,58,74,.8) 0%, rgba(26,37,48,.88) 100%),
+    url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&q=80') center/cover no-repeat;
   padding: 0.7rem;
   display: flex;
   flex-direction: column;
