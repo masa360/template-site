@@ -18,22 +18,17 @@
   /* ─── ジャンルごとのテンプレート定義（附番: 1〜6） ─── */
   var TEMPLATES = {
     butuhan: [
+      { num: 2,  name: 'フレグランスコレクション', style: 'biyou', path: 'templates/biyou/index.html' },
       { num: 3,  name: '珈琲と、ひだまり。', style: 'butuhan', path: 'templates/butuhan/index.html' }
     ],
     biyou: [
-      { num: 2,  name: 'フレグランスコレクション', style: 'biyou', path: 'templates/biyou/index.html' },
       { num: 4,  name: 'doodle', style: 'doodle', path: 'templates/biyou-doodle/index.html' },
       { num: 6,  name: 'longleage', style: 'longleage', path: 'templates/biyou-longleage/index.html' }
     ],
-    insyoku: [
-      { num: 5,  name: 'ゆうカフェ', style: 'insyoku', path: 'templates/insyoku/index.html' }
-    ],
+    insyoku: [],
     school: [
       { num: 7, name: 'モノコトLab.', style: 'school-lp7', path: 'templates/school-lp7/index.html' },
       { num: 8, name: '習い事教室', style: 'school-lp8', path: 'templates/school-lp8/index.html' }
-    ],
-    taiken: [
-      { num: 1,  name: 'nebane', style: 'taiken', path: 'templates/taiken/index.html' }
     ]
   };
 
@@ -57,12 +52,6 @@
       company: '〇〇スクール\n受講生累計500名以上。\n少人数制で一人ひとりに丁寧に対応。',
       features:'オンライン・対面どちらも対応\n無料体験レッスンあり\n修了後もサポート継続'
     },
-    taiken: {
-      catch:   'まず体験してみませんか？',
-      sub:     '難しいことは何もありません。\n初めての方でも気軽にご参加ください。',
-      company: '〇〇体験会\n毎月開催・定員10名の少人数制。\n初めての方大歓迎です。',
-      features:'参加費無料（初回限定）\n持ち物一切不要\nLINEで簡単予約OK'
-    },
     insyoku: {
       catch:   'ここは、かくれがのような居場所',
       sub:     '飲みものも、おやつも、Wi-Fiも充電もぜんぶ無料です。',
@@ -71,7 +60,7 @@
     }
   };
 
-  var GENRE_LABELS = { butuhan:'物販', biyou:'美容', insyoku:'飲食', school:'スクール', taiken:'体験' };
+  var GENRE_LABELS = { butuhan:'物販', biyou:'美容', insyoku:'飲食', school:'スクール' };
 
   /* ─── 現在の状態 ─── */
   var state = { genre: null, tpl: null };
@@ -255,7 +244,7 @@
   ════════════════════════════════════════ */
   function buildDemoUrl(path, genre) {
     /* 固定コンテンツのサンプルLPはパラメータ不要 */
-    if (path.indexOf('biyou/index.html') !== -1 || path.indexOf('biyou-doodle/index.html') !== -1 || path.indexOf('biyou-longleage/index.html') !== -1 || path.indexOf('butuhan/index.html') !== -1 || path.indexOf('insyoku/index.html') !== -1 || path.indexOf('taiken/index.html') !== -1 || path.indexOf('school-lp8/index.html') !== -1 || path.indexOf('school-lp7/index.html') !== -1) return path;
+    if (path.indexOf('biyou/index.html') !== -1 || path.indexOf('biyou-doodle/index.html') !== -1 || path.indexOf('biyou-longleage/index.html') !== -1 || path.indexOf('butuhan/index.html') !== -1 || path.indexOf('insyoku/index.html') !== -1 || path.indexOf('school-lp8/index.html') !== -1 || path.indexOf('school-lp7/index.html') !== -1) return path;
     var d = DEMO[genre] || DEMO.butuhan;
     var p = new URLSearchParams();
     p.set('catch',   d.catch);
@@ -283,13 +272,6 @@
         + '<div class="mock-hero-logo"></div>'
         + '<div class="mock-hero-badges"></div>'
         + '<div class="mock-hero-cta"></div>'
-        + '</div>';
-    }
-    if (style === 'taiken') {
-      return '<div class="tpl-preview tpl-preview-taiken">'
-        + '<div class="mock-slider"></div>'
-        + '<div class="mock-copy"></div>'
-        + '<div class="mock-btn"></div>'
         + '</div>';
     }
     if (style === 'butuhan') {
